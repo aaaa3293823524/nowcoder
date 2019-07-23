@@ -7,11 +7,11 @@
 
 
 ## Solution
-{% for solution in solutions -%}
-Language: **{{ solution.language }}**
+{% for question in questions -%}
+Language: **{{ question.lan }}**
 
 ```
-{{ solution.code }}
+{{ question.code }}
 ```
 
 {% endfor %}

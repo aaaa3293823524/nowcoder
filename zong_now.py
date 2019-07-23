@@ -64,11 +64,13 @@ g=0
 all_submissions = []
 
 new_ac_title_slugs = set()
-solutions = {}
-questions = {}
+question={}
+solution={}
 language=[]
-question=[]
-solution=[]
+
+solutions = []
+questions = []
+
 
 LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 solu_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'solution.json')
@@ -80,41 +82,85 @@ for i in list:
     soup = BeautifulSoup(html, 'html.parser')
     is_True = soup.find('span', class_='font-green')
     if(is_True==None):
-        pass
+        continue
     else:
         is_True=is_True.text
-        g += 1
-        print(g)
+
     if(is_True!='答案正确'):
         continue
+
+
+
     print(i+':答案:')
+    language=[]
     problem_title = soup.find("span", class_='crumbs-end js-question-title').text
     print(problem_title)
     problem_detail = soup.find('div', class_='subject-question').text
     print(problem_detail)
     daima = soup.find('pre').text
     print(daima)
-    language=re.findall(r'语言：(\w+)', html)
+    lan=re.findall(r'语言：(\w+)', html)
+    for ques in questions:
+        if ques['title']==problem_title and ques['lan']==lan:
+            continue
+    g += 1
+    print(g)
+    question['title_id'] = g
+    question['title']=problem_title
+    question['content']=problem_detail
+    question['lan']=lan
+    question['code']=daima
+    question['link']=i
+    questions.append(question)
 
-    problem_detail = soup.find('div', class_='subject-question').text
+
     # print(re.findall(r'语言：(\S+<)', html)[0].strip('<'))
 
-    solution['title_id'] = i
-    solution['title'] = '我是谁'
-    language.append('JAVA')
-    language.append('C++')
-    language.append('python')
-    solution['language'] = language
-
+    # solution['title_id'] = i
+    # solution['title'] = '我是谁'
+    # language.append('JAVA')
+    # language.append('C++')
+    # language.append('python')
+    # solution['language'] = language
 
 
     filename='%s-%s.md' % (g, problem_title)
-    with open(r'%s-%s.md' % (g, problem_title[0:8]), 'a+', encoding='utf-8') as f:
-        f.write('{0}{0}\n'.format('='*20))
-        f.write("#" + problem_title + '\n')
-        f.write(problem_detail)
-        f.write(">" + ''.join(language) + '\n')
-        f.write("```" + '\n')
-        f.write(daima + '\n')
-        f.write("```" + '\n')
+    tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'solution.txt'), encoding='utf-8').read())
+    ques = tmpl.render(question=question)
 
+    with open(os.path.join(LP_PREFIX,'nowcoder-publisher','nowcoder', filename[0:9]), 'w', encoding='utf-8') as f:
+        f.write(ques)
+    # with open(r'%s-%s.md' % (g, problem_title[0:8]), 'a+', encoding='utf-8') as f:
+    #     f.write('{0}{0}\n'.format('='*20))
+    #     f.write("#" + problem_title + '\n')
+    #     f.write(problem_detail)
+    #     f.write(">" + ''.join(language) + '\n')
+    #     f.write("```" + '\n')
+    #     f.write(daima + '\n')
+    #     f.write("```" + '\n')
+
+ques_file = os.path.join(LP_PREFIX, 'nowcoder-publisher', 'nowcoder', 'question.json')
+tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'readme.txt'), encoding='utf-8').read())
+s = tmpl.render(questions=questions)
+filename = 'README.md'
+with open(os.path.join(LP_PREFIX, 'nowcoder-publisher', filename), 'w', encoding='utf-8') as f:
+    f.write(s)
+
+
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+cmds = []
+
+
+cmds.append('git init')
+cmds.append('git add .')
+cmds.append('git commit -m "Auto Deployment"')
+cmds.append('git remote add origin git@github.com:aaaa3293823524/nowcoder.git')
+cmds.append('git push -u origin master')
+
+for cmd in cmds:
+    try:
+        ret = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT).decode('utf-8').strip()
+        if ret:
+            print(ret)
+    except subprocess.CalledProcessError:
+        break

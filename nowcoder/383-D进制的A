@@ -1,0 +1,12 @@
+# 383. D进制的A+B (20) 
+
+## Question description
+
+
+输入两个非负10进制整数A和B(<=230-1)，输出A+B的D (1 < D <= 10)进制数。
+
+
+
+
+## Solution
+

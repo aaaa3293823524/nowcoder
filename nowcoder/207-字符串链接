@@ -1,0 +1,12 @@
+# 207. 字符串链接 
+
+## Question description
+
+
+不用strcat 函数，自己编写一个字符串链接函数MyStrcat(char dstStr[],charsrcStr[])
+
+
+
+
+## Solution
+

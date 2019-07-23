@@ -1,0 +1,14 @@
+# 180. 有几个PAT（25） 
+
+## Question description
+
+
+字符串APPAPT中包含了两个单词“PAT”，其中第一个PAT是第2位(P),第4位(A),第6位(T)；第二个PAT是第3位(P),第4位(A),第6位(T)。
+
+  现给定字符串，问一共可以形成多少个PAT？
+
+
+
+
+## Solution
+

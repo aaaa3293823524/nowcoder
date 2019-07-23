@@ -1,0 +1,34 @@
+# 108. 矩阵乘法 
+
+## Question description
+
+
+
+
+
+如果A是个x行y列的矩阵，B是个y行z列的矩阵，把A和B相乘，其结果将是另一个x行z列的矩阵C。这个矩阵的每个元素是由下面的公式决定的：
+
+
+ 
+原型：
+voidmatrix_multiply(int *m1,int *m2,int *r, int x, int y, int z);
+输入参数：
+    int *m1：x行y列的矩阵(array1[x][y])
+    int *m2：y行z列的矩阵(array2[y][z])
+    int x：矩阵m1的行数
+    int y：矩阵m1的列数/矩阵m2的行数
+    int z：矩阵m2的列数
+ 
+输出参数：
+    int *r：矩阵m1, m2相乘的结果(array3[x][z])
+ 
+返回值：
+        void
+ 
+ 
+
+
+
+
+## Solution
+

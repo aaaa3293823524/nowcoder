@@ -1,0 +1,12 @@
+# 203. 字符串去特定字符 
+
+## Question description
+
+
+输入字符串s和字符c，要求去掉s中所有的c字符，并输出结果。
+
+
+
+
+## Solution
+

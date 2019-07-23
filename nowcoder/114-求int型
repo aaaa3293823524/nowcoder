@@ -1,0 +1,12 @@
+# 114. 求int型正整数在内存中存储时1的个数 
+
+## Question description
+
+
+  输入一个int型的正整数，计算出该int型数据在内存中存储时1的个数。 
+
+
+
+
+## Solution
+

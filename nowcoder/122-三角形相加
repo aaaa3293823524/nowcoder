@@ -1,0 +1,12 @@
+# 122. 三角形相加 
+
+## Question description
+
+
+ 写一个CTriangle 类，要求可以接受CTriangle(y,x)形式的构造。表示含义如下：A(0,y) B(0,0) C(x,0)。要求能够处理若干个三角形的相加（点B保持不变，两直角边相加）。 
+
+
+
+
+## Solution
+

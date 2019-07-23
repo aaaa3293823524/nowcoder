@@ -1,0 +1,12 @@
+# 59. 字符串提取 
+
+## Question description
+
+
+请从字符串中提取以最后一个[img]开头、以最后一个[\img]结尾的字符串，未找到匹配的字符串返回"null"
+
+
+
+
+## Solution
+

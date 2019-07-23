@@ -1,0 +1,12 @@
+# 147. 递推数列 
+
+## Question description
+
+
+给定a0,a1,以及an=p*a(n-1) + q*a(n-2)中的p,q。这里n >= 2。 求第k个数对10000的模。
+
+
+
+
+## Solution
+
