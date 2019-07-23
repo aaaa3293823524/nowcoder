@@ -197,7 +197,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.zong_now">
+  <component name="RunManager" selected="Python.deploy">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nowcoder-publisher" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -326,8 +326,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.zong_now" />
         <item itemvalue="Python.deploy" />
+        <item itemvalue="Python.zong_now" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.login" />
         <item itemvalue="Python.yy" />
