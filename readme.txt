@@ -4,5 +4,8 @@
 
 |  #  |        标题      |      代码本地址   |
 |:---:|:----------------:|:----------------:|
+{% for question in questions -%}
+|{{ question.title_id }} | [{{ question.title }}](problems/{{ question.title_id }}-{{ question.title}}.md) |[{{ question.title }}]({{ question.link }})|
+{% endfor %}
 
 

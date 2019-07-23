@@ -24,7 +24,7 @@ url='https://www.nowcoder.com/profile/4102679/codeBooks?q=&onlyAcc=0&page=1'
 
 html=requests.get(url=url,headers=header)
 print(html.status_code)
-print(html.text)
+# print(html.text)
 html=html.text
 # with open('魔圣提交代码.txt','w',encoding='utf-8')as f:
 #     f.write(html.text)
@@ -58,17 +58,35 @@ for i in range(ye_maxNum):
 
 # LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 # print(LP_PREFIX)
-# print("len:"+len(list))
+print("len:"+str(len(list)))
 g=0
+
+all_submissions = []
+
+new_ac_title_slugs = set()
+solutions = {}
+questions = {}
+language=[]
+question=[]
+solution=[]
+
+LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+solu_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'solution.json')
+ques_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'question.json')
 for i in list:
-    g+=1;
-    print(g)
+
     html = requests.get(url=i, headers=header)
     html = html.text
     soup = BeautifulSoup(html, 'html.parser')
-    is_True = soup.find('span', class_='font-green').text
+    is_True = soup.find('span', class_='font-green')
+    if(is_True==None):
+        pass
+    else:
+        is_True=is_True.text
+        g += 1
+        print(g)
     if(is_True!='答案正确'):
-        break
+        continue
     print(i+':答案:')
     problem_title = soup.find("span", class_='crumbs-end js-question-title').text
     print(problem_title)
@@ -76,17 +94,26 @@ for i in list:
     print(problem_detail)
     daima = soup.find('pre').text
     print(daima)
-    language=re.findall(r'语言：(\S+<)', html)[0].strip('<')
+    language=re.findall(r'语言：(\w+)', html)
+
     problem_detail = soup.find('div', class_='subject-question').text
-    print(re.findall(r'语言：(\S+<)', html)[0].strip('<'))
-    LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+    # print(re.findall(r'语言：(\S+<)', html)[0].strip('<'))
+
+    solution['title_id'] = i
+    solution['title'] = '我是谁'
+    language.append('JAVA')
+    language.append('C++')
+    language.append('python')
+    solution['language'] = language
 
 
-    with open('README.md', 'a+', encoding='utf-8') as f:
-        f.write('{}'.format('='*20))
+
+    filename='%s-%s.md' % (g, problem_title)
+    with open(r'%s-%s.md' % (g, problem_title[0:8]), 'a+', encoding='utf-8') as f:
+        f.write('{0}{0}\n'.format('='*20))
         f.write("#" + problem_title + '\n')
         f.write(problem_detail)
-        f.write(">" + language + '\n')
+        f.write(">" + ''.join(language) + '\n')
         f.write("```" + '\n')
         f.write(daima + '\n')
         f.write("```" + '\n')

@@ -18,26 +18,31 @@ url='https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=287618
 
 
 html=requests.get(url=url,headers=header)
-print(html.status_code)
-print(html.text)
+# print(html.status_code)
+# print(html.text)
 html=html.text
 # with open('魔圣提交代码.txt','w',encoding='utf-8')as f:
 #     f.write(html.text)
 
 soup=BeautifulSoup(html,'html.parser')
-problem_title=soup.find("span",class_='crumbs-end js-question-title').text
-problem_detail=soup.find('div',class_='subject-question').text
+# problem_title=soup.find("span",class_='crumbs-end js-question-title').text
+# problem_detail=soup.find('div',class_='subject-question').text
+#
+# is_True=soup.find('span',class_='font-green').text
+# daima=soup.find('pre').text
+# print(problem_title)
+# print(problem_detail)
+#
+# print(is_True)
+#
+# print(daima)
+#
+#
+# print(re.findall(r'语言：(\S+<)',html)[0].strip('<'))
+# LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+# print(LP_PREFIX)
 
-is_True=soup.find('span',class_='font-green').text
-daima=soup.find('pre').text
-print(problem_title)
-print(problem_detail)
 
-print(is_True)
+language=re.findall(r'语言：(\w+)', html)
 
-print(daima)
-
-
-print(re.findall(r'语言：(\S+<)',html)[0].strip('<'))
-LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-print(LP_PREFIX)
+print("".join(language))
