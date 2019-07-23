@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd619567-6d63-44d3-9628-9e700a436b8e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/175-10进制 VS 2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/238-孩子们的游戏(圆圈.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/375-写出这个数 (20.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/380-挖掘机技术哪家强(.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/381-统计同成绩学生(2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/382-组个最小数 (20.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/383-D进制的A+B (.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/384-个位数统计 (15.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/385-锤子剪刀布 (20.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/386-A除以B (20).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/387-1016. 部分A.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/388-福尔摩斯的约会 (.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/389-数素数 (20).md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/390-A+B和C (15.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nowcoder/401-正确的使用 par.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.py" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zong_now.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="157" selection-start-line="157" selection-end-line="157" selection-end-column="23" />
+            <state relative-caret-position="254">
+              <caret line="161" column="69" lean-forward="true" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="69" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -51,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deploy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1178">
-              <caret line="62" column="47" selection-start-line="61" selection-start-column="14" selection-end-line="62" selection-end-column="47" />
+            <state relative-caret-position="285">
+              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -78,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://D:/leetcode-publisher/src/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="195" column="95" selection-start-line="195" selection-start-column="86" selection-end-line="195" selection-end-column="95" />
+            <state relative-caret-position="184">
+              <caret line="268" column="58" lean-forward="true" selection-start-line="268" selection-start-column="58" selection-end-line="268" selection-end-column="58" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -117,7 +102,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -162,7 +147,6 @@
       <find>md</find>
       <find>remote</find>
       <find>de</find>
-      <find>yaml</find>
       <find>Template</find>
       <find>json</find>
       <find>filename</find>
@@ -181,6 +165,8 @@
       <find>shut</find>
       <find>LP</find>
       <find>questions</find>
+      <find>yaml</find>
+      <find>conf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,9 +179,7 @@
         <option value="$PROJECT_DIR$/leetcode_login.py" />
         <option value="$PROJECT_DIR$/yy.py" />
         <option value="$PROJECT_DIR$/login.py" />
-        <option value="D:/leetcode-publisher/src/app.py" />
         <option value="$PROJECT_DIR$/jj.py" />
-        <option value="$PROJECT_DIR$/deploy.py" />
         <option value="$PROJECT_DIR$/render.py" />
         <option value="$PROJECT_DIR$/nowcoder/question.json" />
         <option value="$PROJECT_DIR$/fff.py" />
@@ -203,6 +187,8 @@
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/zong_now.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="D:/leetcode-publisher/src/app.py" />
+        <option value="$PROJECT_DIR$/deploy.py" />
       </list>
     </option>
   </component>
@@ -254,7 +240,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.deploy">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nowcoder-publisher" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -383,11 +369,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.deploy" />
         <item itemvalue="Python.zong_now" />
         <item itemvalue="Python.fff" />
         <item itemvalue="Python.render" />
-        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -417,12 +403,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33002833" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33002833" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -521,16 +507,6 @@
     <entry file="file://$PROJECT_DIR$/nowcoder/question.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://D:/leetcode-publisher/src/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="195" column="95" selection-start-line="195" selection-start-column="86" selection-end-line="195" selection-end-column="95" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/question.md.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -572,26 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zong_now.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="157" selection-start-line="157" selection-end-line="157" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="62" column="47" selection-start-line="61" selection-start-column="14" selection-end-line="62" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -599,6 +555,36 @@
             <caret line="179" column="36" lean-forward="true" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zong_now.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="161" column="69" lean-forward="true" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/leetcode-publisher/src/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="268" column="58" lean-forward="true" selection-start-line="268" selection-start-column="58" selection-end-line="268" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
