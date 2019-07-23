@@ -75,7 +75,7 @@ questions = []
 LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 solu_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'solution.json')
 ques_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'question.json')
-for i in list[0:3]:
+for i in list:
 
     html = requests.get(url=i, headers=header)
     html = html.text
@@ -158,8 +158,8 @@ cmds = []
 cmds.append('git init')
 cmds.append('git add .')
 cmds.append('git commit -m "Auto Deployment"')
-cmds.append('git remote add origin git@github.com:aaaa3293823524/nowcoder.git')
-cmds.append('git push -u origin master')
+# cmds.append('git remote add origin git@github.com:aaaa3293823524/nowcoder.git')
+cmds.append('git push -f -q aaaa3293823524@nowcoder.git master:master')
 
 for cmd in cmds:
     try:
