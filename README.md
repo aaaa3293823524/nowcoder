@@ -71,7 +71,7 @@
 |66 | [超链接](nowcoder/66-超链接.md) |[超链接](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49092151)|Python
 |67 | [人民币转换](nowcoder/67-人民币转换.md) |[人民币转换](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090653)|C
 |68 | [记票统计](nowcoder/68-记票统计.md) |[记票统计](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090603)|Java
-|69 | [201301 JA](nowcoder/69-201301 JA.md) |[201301 JA](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090203)|Java
+|69 | [201301 JA](nowcoder/69-201301JA.md) |[201301 JA](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49090203)|Java
 |70 | [整形数组合并](nowcoder/70-整形数组合并.md) |[整形数组合并](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49089897)|Python
 |71 | [图片整理](nowcoder/71-图片整理.md) |[图片整理](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49054081)|Java
 |72 | [删除字符串中出现次](nowcoder/72-删除字符串中出现次.md) |[删除字符串中出现次](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=49053893)|Python
@@ -113,7 +113,7 @@
 |108 | [矩阵乘法](nowcoder/108-矩阵乘法.md) |[矩阵乘法](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46256436)|C
 |109 | [字符串排序](nowcoder/109-字符串排序.md) |[字符串排序](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46254636)|C
 |110 | [字符串合并处理](nowcoder/110-字符串合并处理.md) |[字符串合并处理](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46254141)|C
-|111 | [201301 JA](nowcoder/111-201301 JA.md) |[201301 JA](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253677)|C
+|111 | [201301 JA](nowcoder/111-201301JA.md) |[201301 JA](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253677)|C
 |112 | [统计每个月兔子的总](nowcoder/112-统计每个月兔子的总.md) |[统计每个月兔子的总](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253364)|Python
 |113 | [字符逆序](nowcoder/113-字符逆序.md) |[字符逆序](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46253204)|Python
 |114 | [求int型正整数在](nowcoder/114-求int型正整数在.md) |[求int型正整数在](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=46252677)|Python
@@ -177,7 +177,7 @@
 |172 | [进制转换](nowcoder/172-进制转换.md) |[进制转换](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45676193)|C
 |173 | [abc](nowcoder/173-abc.md) |[abc](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45675938)|Java
 |174 | [最大子矩阵](nowcoder/174-最大子矩阵.md) |[最大子矩阵](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45675498)|C
-|175 | [10进制 VS 2](nowcoder/175-10进制VS 2.md) |[10进制 VS 2](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45666396)|C
+|175 | [10进制 VS 2](nowcoder/175-10进制VS2.md) |[10进制 VS 2](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45666396)|C
 |176 | [剩下的树](nowcoder/176-剩下的树.md) |[剩下的树](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45665619)|C
 |177 | [最大序列和](nowcoder/177-最大序列和.md) |[最大序列和](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45665279)|C
 |178 | [玛雅人的密码](nowcoder/178-玛雅人的密码.md) |[玛雅人的密码](https://www.nowcoder.com/profile/4102679/codeBookDetail?submissionId=45664921)|C
