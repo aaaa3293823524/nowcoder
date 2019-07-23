@@ -1,4 +1,4 @@
-# 88. 另类加法 
+# 88. |另类加法
 
 ## Question description
 
@@ -10,7 +10,12 @@
 返回：3
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+1,2
+```
+
 

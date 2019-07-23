@@ -1,4 +1,4 @@
-# 395. 素数对 
+# 395. |素数对
 
 ## Question description
 
@@ -7,7 +7,41 @@
  如，输入为10, 程序应该输出结果为2。（共有两对质数的和为10,分别为(5,5),(3,7)）
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+ 
+public class Main{
+     
+    //素数对
+    public static void main(String[] args) {
+         
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int sum = 0;
+        for(int i=2; i<=n/2; i++){
+            if(isss(i) && isss(n-i)){
+                sum++;
+            }
+        }
+        System.out.println(sum);
+    }
+     
+    //判断是否为素数
+    public static boolean isss(int n){
+      for(int i=2; i<=Math.sqrt(n); i++){
+        if(n%i == 0)
+              return false;
+      }  return true;
+    }
+     
+}
+
+```
+
 

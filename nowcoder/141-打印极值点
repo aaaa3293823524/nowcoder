@@ -1,4 +1,4 @@
-# 141. 打印极值点下标 
+# 141. |打印极值点下标
 
 ## Question description
 
@@ -7,7 +7,25 @@
 或者小于所有它相邻的整数，则称为该整数为一个极值点，极值点的下标就是i。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+#将数组分成三部分，第一部分是中间的，第二和第三分别是头两个数和最后两个数。
+
+#分别找出这三个部分的极值点，合起来就可以了。
+
+def filterPeak(arr):
+    a = list(
+        filter(lambda i: (arr[i] < arr[i - 1] and arr[i] < arr[i + 1]) or (arr[i] > arr[i - 1] and arr[i] > arr[i + 1]),
+               range(1, len(arr) - 1)))
+    b = [0] if arr[0] != arr[1] else []
+    c = [len(arr) - 1] if arr[-2] != arr[-1] else []
+    return b + a + c
+ 
+a, b = input(), list(map(int, input().split()))
+print(" ".join(map(str, filterPeak(b))))
+```
+
 

@@ -1,4 +1,4 @@
-# 30. 获取当前薪水第二多的员工的emp_no以及其对应的薪水salary 
+# 30. |获取当前薪水第二多的员工的emp_no以及其对应的薪水salary
 
 ## Question description
 
@@ -12,7 +12,13 @@ CREATE TABLE `salaries` (
 PRIMARY KEY (`emp_no`,`from_date`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+select emp_no,salary from salaries
+where to_date='9999-01-01' order by salary desc limit 1,1
+```
+
 

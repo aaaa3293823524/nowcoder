@@ -1,4 +1,4 @@
-# 312. 句子反转 
+# 312. |句子反转
 
 ## Question description
 
@@ -7,7 +7,37 @@
 xiao mi”-> “mi xiao hello”
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+		Stack<String>stack=new Stack<>();
+		Scanner scanner=new Scanner(System.in);
+		
+		while(scanner.hasNext()){
+			String string=scanner.nextLine();
+			String string2[]=string.split(" ");
+			int count=0;
+			for (int i = 0; i < string2.length; i++) {
+				stack.push(string2[i]);
+				count++;
+			}
+			while(count-->1){
+				System.out.print(stack.pop()+" ");
+			}
+			System.out.println(stack.pop());
+		}
+	}
+}
+
+```
+
 

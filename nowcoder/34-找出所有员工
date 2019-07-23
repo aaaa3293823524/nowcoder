@@ -1,4 +1,4 @@
-# 34. 找出所有员工当前薪水salary情况 
+# 34. |找出所有员工当前薪水salary情况
 
 ## Question description
 
@@ -12,7 +12,13 @@ CREATE TABLE `salaries` (
 PRIMARY KEY (`emp_no`,`from_date`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+select distinct salary from salaries where
+to_date='9999-01-01' order by salary desc
+```
+
 

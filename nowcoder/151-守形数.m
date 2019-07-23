@@ -1,4 +1,4 @@
-# 151. 守形数 
+# 151. |守形数
 
 ## Question description
 
@@ -8,7 +8,28 @@
 编一个程序，判断N是否为守形数。
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<bits/stdc++.h>
+int main(){
+    int n,m;
+    while(scanf("%d",&n)!=EOF){
+        m=n*n;
+        while(n!=0){
+            if((n%10) == (m%10)){
+                n/=10;m/=10;
+            }
+           else break;
+        }
+        if(n!=0) printf("No!\n");
+        else printf("Yes!\n");
+    }
+}
+```
+
 

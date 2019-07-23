@@ -1,4 +1,4 @@
-# 160. 二次方程计算器 
+# 160. |二次方程计算器
 
 ## Question description
 
@@ -6,7 +6,76 @@
 设计一个二次方程计算器
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+#include<stack>
+#include<cmath>
+using namespace std;
+int cba[3],epos;
+char str[100];
+ 
+void Read(int &co,int &eo,int &i){
+    if(str[i]==0) {eo=-1; return ;}
+    int flag=0;
+    if(str[i]=='=') {++i;}
+     if(str[i]=='-') {++i;++flag;}
+    if(str[i]=='+') ++i;
+    if(i>epos) ++flag;
+    if(str[i]=='x'){
+        co=1;
+        if(str[i+1]=='^'){i+=2; eo=str[i]-'0'; ++i;}
+        else {i++; eo=1;}
+    }
+    else{
+        co=0;
+        while(str[i]>='0'&&str[i]<='9') 
+            {co=co*10+str[i]-'0'; ++i;}
+        if(str[i]=='x'){ 
+            if(str[i+1]=='^'){i+=2; eo=str[i]-'0';++i;}
+            else {i++; eo=1;} 
+        }
+        else {eo=0;++i;}
+    }
+    if(flag%2){
+            co=0-co;
+    }
+}
+int main(){
+    while(scanf("%s",str)==1){
+        for(int i=0;;++i){
+            if(str[i]==0)break;
+            if(str[i]=='=') {epos=i; break;}
+        }
+        int co,eo,i=0;
+        memset(cba,0,sizeof(cba));
+        while(1){
+            Read(co,eo,i);
+            if(eo==-1) break;
+            cba[eo]+=co;
+        }
+        int a=cba[2],b=cba[1],c=cba[0];
+       // printf("a:%d,b:%d,c:%d\n",a,b,c);
+        double delta=b*b-4*a*c;
+        if(delta<0) printf("No Solution\n");
+        else {
+            double x1,x2;
+            x1=(0-b-sqrt(delta))/(2*a);
+            x2=(0-b+sqrt(delta))/(2*a);
+            if(x1>x2) swap(x1,x2);
+            printf("%.2f %.2f\n",x1,x2);
+        }
+    }
+    return 0;
+}
+```
+
 

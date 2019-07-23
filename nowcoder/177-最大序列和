@@ -1,4 +1,4 @@
-# 177. 最大序列和 
+# 177. |最大序列和
 
 ## Question description
 
@@ -8,7 +8,30 @@
 变量条件：N为正整数，N≤1000000，结果序列和在范围（-2^63,2^63-1）以内。
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<stdio.h>
+#include<algorithm>
+//#include<windows.h>
+using namespace std;
+int main(){
+    int N,i;
+    //freopen("input.txt","r",stdin);
+    while(scanf("%d",&N)!=EOF){
+        long sum=0,Max=-999999999,x;
+        for(i=0;i<N;i++){
+            scanf("%ld",&x);
+            sum=max(sum+x,x);
+            Max=max(Max,sum);
+        }
+        printf("%ld\n",Max);
+    }
+}
+```
+
 

@@ -1,4 +1,4 @@
-# 8. 如何获取emp_v和employees有相同的数据no 
+# 8. |如何获取emp_v和employees有相同的数据no
 
 ## Question description
 
@@ -160,7 +160,12 @@ select * from employees where emp_no >10005;如何获取emp_v和employees有相�
 
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+SELECT * FROM employees INTERSECT SELECT * FROM emp_v
+```
+
 

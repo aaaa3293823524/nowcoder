@@ -1,4 +1,4 @@
-# 68. 记票统计 
+# 68. |记票统计
 
 ## Question description
 
@@ -18,7 +18,53 @@ void Clear()
  
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        while (scanner.hasNext()) {
+            int n1 = scanner.nextInt();
+            String string[] = new String[n1];
+            Map<String, Integer> map = new HashMap<>();
+            for (int i = 0; i < n1; i++) {
+                string[i] = scanner.next();
+                map.put(string[i], 0);
+            }
+            int n2 = scanner.nextInt();
+            String string1[] = new String[n2];
+            int invalidSum = 0;
+            for (int i = 0; i < n2; i++) {
+                string1[i] = scanner.next();
+                boolean flag = false;
+                for (String string2 : map.keySet()) {
+                    if (string1[i].equals(string2)) {
+                        map.put(string2, map.get(string2) + 1);
+                        flag = true;
+                    }
+                }
+                if (!flag) {
+                    invalidSum++;
+                }
+            }
+            for (int i = 0; i < n1; i++) {
+                System.out.println(string[i] + " : " + map.get(string[i]));
+            }
+            System.out.println("Invalid : " + invalidSum);
+        }
+
+    }
+
+}
+
+
+
+```
+
 

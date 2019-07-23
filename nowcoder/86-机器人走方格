@@ -1,4 +1,4 @@
-# 86. 机器人走方格I 
+# 86. |机器人走方格I
 
 ## Question description
 
@@ -10,7 +10,12 @@
 返回：2
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+2,2
+```
+
 

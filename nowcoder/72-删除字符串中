@@ -1,4 +1,4 @@
-# 72. 删除字符串中出现次数最少的字符 
+# 72. |删除字符串中出现次数最少的字符
 
 ## Question description
 
@@ -9,7 +9,26 @@
 
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+from collections import defaultdict
+while True:
+    try:
+        a = input()
+        dd = defaultdict(int)
+        for i in a:
+            dd[i] += 1
+        for i in dd:
+            if dd[i] == min(dd.values()):
+                a = a.replace(i, "")
+        print(a)
+    except:
+        break
+```
+
 

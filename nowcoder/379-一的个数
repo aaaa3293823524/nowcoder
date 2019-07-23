@@ -1,4 +1,4 @@
-# 379. 一的个数 
+# 379. |一的个数
 
 ## Question description
 
@@ -6,7 +6,45 @@
 NowCoder总是力争上游，凡事都要拿第一，所以他对“1”这个数情有独钟。爱屋及乌，他也很喜欢包含1的数，例如10、11、12……。不仅如此，他同样喜欢任意进制中包含1的数。当然，其中包含1的个数越多他越喜欢。你能帮他统计一下某个数在特定的进制下1的个数吗？
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here
+
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		ArrayList list=new ArrayList();
+		int a;
+		int i=0;
+		while(scanner.hasNext()){
+			a=0;
+			int n=scanner.nextInt();
+			int r=scanner.nextInt();
+			while(n!=0){
+				if (n%r==1) {
+					a++;
+				}
+				n=n/r;
+			}
+			System.out.println(a);
+			list.add(String.valueOf(a));
+		}
+//		for (int j = 0; j < list.size(); j++) {
+//			System.out.println(list.get(j));
+//		}
+		
+		
+	}
+}
+
+```
+
 

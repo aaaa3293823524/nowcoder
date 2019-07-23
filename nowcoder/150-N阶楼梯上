@@ -1,4 +1,4 @@
-# 150. N阶楼梯上楼问题 
+# 150. |N阶楼梯上楼问题
 
 ## Question description
 
@@ -6,7 +6,44 @@
 N阶楼梯上楼问题：一次可以走两阶或一阶，问有多少种上楼方式。（要求采用非递归）
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.awt.List;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
+
+public class Main {
+       public static int stepN(int n){
+    	   int num[]=new int[90];
+    	   num[1]=1;num[2]=2;
+    	   for (int i = 3; i <=n; i++) {
+			num[i]=num[i-1]+num[i-2];
+			//System.out.println(i+":"+num[i]);
+		}
+    	   
+    	   return num[n];
+       }
+
+		public static void main(String[] args) {
+			    ArrayList<Integer> list=new ArrayList<>();
+		        Scanner in = new Scanner(System.in);
+		        while(in.hasNext()){
+		        	int n=in.nextInt();
+		        	System.out.println(stepN(n));
+		        }
+		        
+		        
+		        
+		        
+		    }
+		
+}
+```
+
 

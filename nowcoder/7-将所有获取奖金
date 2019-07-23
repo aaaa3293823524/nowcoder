@@ -1,4 +1,4 @@
-# 7. 将所有获取奖金的员工当前的薪水增加10% 
+# 7. |将所有获取奖金的员工当前的薪水增加10%
 
 ## Question description
 
@@ -15,7 +15,16 @@
  `to_date` date NOT NULL, PRIMARY KEY (`emp_no`,`from_date`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+update salaries
+set salary=salary*1.1
+where emp_no in(
+select emp_no from emp_bonus
+)
+```
+
 

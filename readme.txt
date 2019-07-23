@@ -2,7 +2,7 @@
 <h3 align="center">My accepted nowcoder solutions</h3>
 
 
-|  #  |        标题      |      代码本地址   |
+|  #  |        标题      |      代码本地址   |提交时间|
 |:---:|:----------------:|:----------------:|
 {% for question in questions -%}
 |{{ question.title_id }} | [{{ question.title }}]({{ question.title_id }}-{{ question.title}}.md) |[{{ question.title }}]({{ question.link }})|

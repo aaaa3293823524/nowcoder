@@ -1,4 +1,4 @@
-# 21. 批量插入数据 
+# 21. |批量插入数据
 
 ## Question description
 
@@ -29,7 +29,16 @@ CREATE TABLE  IF NOT EXISTS actor  (
 
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+
+
+INSERT INTO actor
+VALUES (1, 'PENELOPE', 'GUINESS', '2006-02-15 12:34:33'),
+(2, 'NICK', 'WAHLBERG', '2006-02-15 12:34:33')
+```
+
 

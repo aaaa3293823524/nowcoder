@@ -1,4 +1,4 @@
-# 284. 发放贷款 
+# 284. |发放贷款
 
 ## Question description
 
@@ -12,7 +12,51 @@
  现在给你所需的信息，请输出银行批准贷款的顺序。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int m = sc.nextInt();
+            int n = sc.nextInt();
+            People[] p = new People[m];
+            for (int i = 0; i < m; i ++ ) {
+                p[i] = new People(sc.next(), sc.nextInt(), false);
+            }
+            int count = 0;
+            int money = n;
+            while (count < m) {
+                for (int i = 0; i < m; i ++ ) {
+                    if( ! p[i].flag && p[i].need <= money) {
+                        money -= p[i].need;
+                        p[i].flag = true;
+                        count ++ ;
+                        System.out.println(p[i].name);
+                    }
+                }
+                money = n;
+            }
+            System.out.println();
+        }
+    }
+    static class People {
+        String name;
+        int need;
+        boolean flag;
+        public People(String name, int need, boolean flag) {
+            this.name = name;
+            this.need = need;
+            this.flag = flag;
+        }
+    }
+}
+```
+
 

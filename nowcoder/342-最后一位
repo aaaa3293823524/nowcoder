@@ -1,4 +1,4 @@
-# 342. 最后一位 
+# 342. |最后一位
 
 ## Question description
 
@@ -6,7 +6,50 @@
 牛牛选择了一个正整数X,然后把它写在黑板上。然后每一天他会擦掉当前数字的最后一位,直到他擦掉所有数位。 在整个过程中,牛牛会把所有在黑板上出现过的数字记录下来,然后求出他们的总和sum. 例如X = 509, 在黑板上出现过的数字依次是509, 50, 5, 他们的和就是564. 牛牛现在给出一个sum,牛牛想让你求出一个正整数X经过上述过程的结果是sum.
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.zip.ZipEntry;
+
+public class Main {
+	public static long getSum(long sum){
+		long sum1=0;
+	    while(sum!=0){
+	    	sum1+=sum;
+	    	sum/=10;
+	    }
+		return sum1;
+	}
+    public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		long sum=scanner.nextLong();
+		long low=0,mid,high=sum;
+		while(low<=high){
+			mid=(low+high)/2;
+			if (getSum(mid)==sum) {
+				System.out.println(mid);
+				break;
+			}
+			if (getSum(mid)>sum) {
+				high=mid-1;
+			}
+			if (getSum(mid)<sum) {
+				low=mid+1;
+			}
+		}
+		if (low>high) {
+			System.out.println(-1);
+		}
+	}
+}
+
+```
+
 

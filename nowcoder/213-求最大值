@@ -1,4 +1,4 @@
-# 213. 求最大值 
+# 213. |求最大值
 
 ## Question description
 
@@ -6,7 +6,31 @@
 输入10个整数，要求输出其中的最大值。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+	import java.util.Scanner;
+	import java.util.Arrays;
+	public class Main {
+	
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        
+	        while(scanner.hasNext()){
+	            int a[]=new int[10];
+	            for (int i = 0; i < a.length; i++) {
+					a[i]=scanner.nextInt();
+				}
+	            Arrays.sort(a);
+	            System.out.println("max="+a[9]);
+	        }
+	        
+		}
+	
+	
+	}
+```
+
 

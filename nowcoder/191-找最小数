@@ -1,4 +1,4 @@
-# 191. 找最小数 
+# 191. |找最小数
 
 ## Question description
 
@@ -6,7 +6,41 @@
 第一行输入一个数n，1 <= n <= 1000，下面输入n行数据，每一行有两个数，分别是x y。输出一组x y，该组数据是所有数据中x最小，且在x相等的情况下y最小的。 
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+struct Num{
+    int x;
+    int y;
+};
+bool comp(Num n1,Num n2){    //自定义函数,注意排法
+    if(n1.x==n2.x)
+        return n1.y<n2.y;
+    else
+        return n1.x<n2.x;
+
+}
+int main(){
+    int n;
+    while(cin>>n){
+        vector<Num>v(n);
+        for(int i=0;i<n;++i){    //读入信息
+            cin>>v[i].x>>v[i].y;
+        }
+        sort(v.begin(),v.end(),comp);    //按要求排序
+        cout<<v[0].x<<" "<<v[0].y<<endl;
+    }
+    return 0;
+}
+```
+
 

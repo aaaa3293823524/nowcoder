@@ -1,4 +1,4 @@
-# 234. 反转链表 
+# 234. |反转链表
 
 ## Question description
 
@@ -6,7 +6,36 @@
 输入一个链表，反转链表后，输出新链表的表头。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+	    public ListNode ReverseList(ListNode head) {
+	    	ListNode pre=null,cur=head,tmp;
+	    	while(cur!=null){
+	    		tmp=cur.next;
+	    		cur.next=pre;
+	    		
+	    		if (tmp==null) {
+					head=cur;
+				}
+	    		pre=cur;
+	    		cur=tmp;
+	    	}
+            return head;
+	    }
+}
+```
+
 

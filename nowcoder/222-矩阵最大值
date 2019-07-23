@@ -1,4 +1,4 @@
-# 222. 矩阵最大值 
+# 222. |矩阵最大值
 
 ## Question description
 
@@ -8,7 +8,43 @@
 最后将结果矩阵输出。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNext()){
+        	int m=scanner.nextInt();
+        	int n=scanner.nextInt();
+        	int a[][]=new int[m][n];
+        	for (int i = 0; i < m; i++) {
+        		int index=0;int max=Integer.MIN_VALUE;int sum=0;
+				for (int j = 0; j < n; j++) {
+					a[i][j]=scanner.nextInt();
+					sum+=a[i][j];
+					if (a[i][j]>max) {
+						max=a[i][j];
+						index=j;
+					}
+				}
+				a[i][index]=sum;
+			}
+        	for (int i = 0; i < m; i++) {
+				for (int j = 0; j < n; j++) {
+					System.out.print(a[i][j]+" ");
+				}
+				System.out.println();
+			}
+        }
+        
+	}
+}
+```
+
 

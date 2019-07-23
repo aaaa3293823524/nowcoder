@@ -1,4 +1,4 @@
-# 17. 针对actor表创建视图actor_name_view 
+# 17. |针对actor表创建视图actor_name_view
 
 ## Question description
 
@@ -10,7 +10,13 @@
    last_update  timestamp NOT NULL DEFAULT (datetime('now','localtime')))
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+CREATE VIEW actor_name_view (first_name_v, last_name_v) AS
+SELECT first_name, last_name FROM actor
+```
+
 

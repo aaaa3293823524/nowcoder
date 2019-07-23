@@ -1,4 +1,4 @@
-# 420. iNOC产品部--完全数计算 
+# 420. |iNOC产品部--完全数计算
 
 ## Question description
 
@@ -115,7 +115,34 @@ int
  
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+#include"stdio.h"
+#include"string.h"
+#include <ctype.h>
+#include <algorithm>
+
+int main(){
+	int n;
+    
+	while((scanf("%d",&n))!=EOF){
+	int sum=0;
+    int cnt=0;
+    for(int i=1;i<=n;i++){
+		sum=0;
+        for(int j=1;j<i;j++){
+           if(i%j==0)sum+=j;
+           
+		}
+		if(sum==i)cnt++;
+	}
+	printf("%d\n",cnt);
+          };
+    return 0;
+}
+```
+
 

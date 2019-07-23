@@ -1,4 +1,4 @@
-# 117. 对称平方数1 
+# 117. |对称平方数1
 
 ## Question description
 
@@ -6,7 +6,18 @@
 打印所有不超过256，其平方具有对称性质的数。如2，11就是这样的数，因为2*2=4，11*11=121。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+for i in range(257):
+    temp = i**2
+    temp1 = str(temp)
+    if temp == int(temp1[::-1]):
+        print(i)
+```
+
 

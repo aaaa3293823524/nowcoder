@@ -1,4 +1,4 @@
-# 203. 字符串去特定字符 
+# 203. |字符串去特定字符
 
 ## Question description
 
@@ -6,7 +6,38 @@
 输入字符串s和字符c，要求去掉s中所有的c字符，并输出结果。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            String string=scanner.nextLine();
+            String string2=scanner.nextLine();
+            for (int i = 0; i <string.length(); i++) {
+				if (string.charAt(i)==string2.charAt(0)) {
+					string=string.substring(0,i)+string.substring(i+1,string.length());
+					i--;
+				}
+			}
+            System.out.println(string);
+        }
+	}
+
+
+}
+```
+
 

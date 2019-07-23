@@ -1,4 +1,4 @@
-# 366. 换零钱 
+# 366. |换零钱
 
 ## Question description
 
@@ -8,7 +8,46 @@
   注：假定支付0元有1种方式。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here
+
+
+import java.util.Scanner;
+ 
+/**
+ * Created by Olive on 2017/8/6.
+ */
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        while (in.hasNext()) {
+            int n = in.nextInt();
+            long countWay = changeWay(n);
+            System.out.println(countWay);
+        }
+    }
+ 
+    // 硬币组合也是一种背包问题
+    public static long changeWay(int n){
+        if(n <= 0)
+            return 1;
+        int[] money = {1, 5, 10, 25, 50};
+        // dp[i]表示，i分钱可以有多少种表示方式
+        long[] dp = new long[n + 1];
+        dp[0] = 1;
+        // 然后遍历所有的零钱情况
+        for(int i = 0; i < 5; i++){
+            for(int j = money[i]; j <= n; j++){
+                dp[j] = dp[j] + dp[j - money[i]];
+            }
+        }
+        return dp[n];
+    }
+}
+```
+
 

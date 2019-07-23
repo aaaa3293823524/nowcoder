@@ -1,4 +1,4 @@
-# 198. 进制转换 
+# 198. |进制转换
 
 ## Question description
 
@@ -6,7 +6,27 @@
 将一个长度最多为30位数字的十进制非负整数转换为二进制数输出。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.*;
+import java.math.*;
+public class Main{
+    public static void main(String args[])
+    {
+        Scanner cin=new Scanner(System.in);
+        BigInteger a;
+        while(cin.hasNextBigInteger())
+        {
+            a=cin.nextBigInteger();
+            System.out.println(a.toString(2));
+        }
+    }
+}
+```
+
 

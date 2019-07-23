@@ -1,4 +1,4 @@
-# 6. 针对库中的所有表生成select count(*)对应的SQL语句 
+# 6. |针对库中的所有表生成select count(*)对应的SQL语句
 
 ## Question description
 
@@ -81,7 +81,13 @@ PRIMARY KEY (`emp_no`,`from_date`));输出格式:
 
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+SELECT "select count(*) from " || name || ";" AS cnts
+FROM sqlite_master WHERE type = 'table'
+```
+
 

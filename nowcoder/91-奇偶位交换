@@ -1,4 +1,4 @@
-# 91. 奇偶位交换 
+# 91. |奇偶位交换
 
 ## Question description
 
@@ -10,7 +10,12 @@
 返回：5
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+10
+```
+
 

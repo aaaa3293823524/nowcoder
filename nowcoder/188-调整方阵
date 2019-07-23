@@ -1,4 +1,4 @@
-# 188. 调整方阵 
+# 188. |调整方阵
 
 ## Question description
 
@@ -11,7 +11,161 @@ N-1.将第N-1列中从第N-1行到第N行最大数所在的行与第N-1行对调
 N.输出这个方阵
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    public static int fc(int n) {
+    	if (n==1) {
+			return 1;
+		}
+    	if (n==2) {
+			return 2;
+		}
+		return fc(n-1)+fc(n-2);
+	}
+    public static boolean isSu(int n){
+    	if (n<=1) {
+			return false;
+		}
+    	for (int i = 2; i <=n/2; i++) {
+			if (n%i==0) {
+				return false;
+			}
+		}
+    	return true;
+    }
+    public static boolean  name1(int n) {
+    	n%=10;
+    	if (n==1) {
+			return true;
+		}
+		return false;
+	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            int n=scanner.nextInt();
+            int a[][]=new int[n][n];
+            for (int i = 0; i < a.length; i++) {
+				for (int j = 0; j < a.length; j++) {
+					a[i][j]=scanner.nextInt();
+				}
+			}
+            int t[]=new int[n];
+            for (int i = 0; i < a.length; i++) {
+            	int max=Integer.MIN_VALUE;
+            	int index=-1;
+				for (int j = i; j < a.length; j++) {
+					if (a[j][i]>max) {
+						max=a[j][i];
+						index=j;
+						//System.out.println("j:"+j);
+					}
+				}
+				//System.out.println("index:"+index);
+				for (int j = 0; j < t.length; j++) {
+					t[j]=a[index][j];
+					a[index][j]=a[i][j];
+					a[i][j]=t[j];
+				}
+//				System.out.println("第"+(i+1)+"列");
+//				for (int j = 0; j < t.length; j++) {
+//					for (int j2 = 0; j2 < t.length; j2++) {
+//						System.out.print(a[j][j2]+" ");
+//					}
+//					System.out.println();
+//				}
+			}
+            for (int i = 0; i < a.length; i++) {
+				for (int j = 0; j < a.length; j++) {
+					System.out.print(a[i][j]+" ");
+				}
+				System.out.println();
+			}
+        }
+	}
+
+
+}
+class edge{
+	int next;
+	int dist;
+	public edge(int next, int dist) {
+		super();
+		this.next = next;
+		this.dist = dist;
+	}
+	
+}
+class vertex{
+	int num;
+	ArrayList<edge>list;
+	public vertex(int num) {
+		super();
+		this.num = num;
+		this.list=new ArrayList<>();
+	}
+	
+}
+class Stu{
+	String name;
+	String num;
+	int age;
+	public Stu(String name, String num, int age) {
+		super();
+		this.name = name;
+		this.num = num;
+		this.age = age;
+	}
+
+}
+class MyComparator implements Comparator<Integer>{
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+		// TODO Auto-generated method stub
+		return o2-o1;
+	}
+	
+}
+class Student3{
+	String num;
+	String name;
+	String sex;
+	int age;
+	public Student3(String num, String name, String sex, int age) {
+		super();
+		this.num = num;
+		this.name = name;
+		this.sex = sex;
+		this.age = age;
+	}
+	
+	
+}
+
+```
+
 

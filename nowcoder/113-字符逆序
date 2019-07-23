@@ -1,4 +1,4 @@
-# 113. 字符逆序 
+# 113. |字符逆序
 
 ## Question description
 
@@ -16,7 +16,14 @@ inputString：输入的字符串
  
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+n=str(input())
+print(n[::-1])
+```
+
 

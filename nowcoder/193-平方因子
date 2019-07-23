@@ -1,4 +1,4 @@
-# 193. 平方因子 
+# 193. |平方因子
 
 ## Question description
 
@@ -6,7 +6,55 @@
 给定一个数n，判定它是否有一个不为1的完全平方数因子。也就是说，是否存在某个k，k>1，使得k*k能够整除n。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    public static int fc(int n) {
+    	if (n==1) {
+			return 1;
+		}
+    	if (n==2) {
+			return 2;
+		}
+		return fc(n-1)+fc(n-2);
+	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            int n=scanner.nextInt();
+            boolean flag=false;
+            for (int i = 2; i < n; i++) {
+				if (i*i>n) {
+					
+					break;
+				}
+				if (n%(i*i)==0) {
+					flag=true;
+					break;
+				}
+			}
+            if (flag) {
+				System.out.println("Yes");
+			}else{
+				System.out.println("No");
+			}
+        }
+	}
+
+
+}
+```
+
 

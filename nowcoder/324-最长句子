@@ -1,4 +1,4 @@
-# 324. 最长句子 
+# 324. |最长句子
 
 ## Question description
 
@@ -7,7 +7,68 @@
  现在给你一些单词间的关系，你能计算出最多能有几个单词组合在一起构成一句话吗？
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here
+
+
+import java.util.*;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+ 
+        while (sc.hasNext()) {
+            Map<String, List<String>> mapper = new HashMap<>();
+            int k = sc.nextInt();
+ 
+            for (int i = 0; i < k; i++) {
+                String from = sc.next();
+                String to = sc.next();
+ 
+                if (!mapper.containsKey(from)) {
+                    mapper.put(from, new ArrayList<>());
+                }
+                if (!mapper.containsKey(to)) {
+                    mapper.put(to, new ArrayList<>());
+                }
+                mapper.get(from).add(to);
+            }
+ 
+            int max = -1;
+            Map<String, Integer> save = new HashMap<>();
+            for (String s : mapper.keySet()) {
+                int temp = dp(save, mapper, s);
+                if (temp > max) {
+                    max = temp;
+                }
+            }
+            System.out.println(max);
+        }
+    }
+ 
+    private static int dp(Map<String, Integer> save, Map<String, List<String>> mapper, String s) {
+        if (mapper.get(s).isEmpty()) {
+            return 1;
+        }
+ 
+        if (!save.containsKey(s)) {
+            int max = -1;
+            for (String ss : mapper.get(s)) {
+                int temp = dp(save, mapper, ss) + 1;
+                if (temp > max)
+                    max = temp;
+            }
+            save.put(s, max);
+        }
+        return save.get(s);
+    }
+}
+ 
+```
+
 

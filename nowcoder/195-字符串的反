@@ -1,4 +1,4 @@
-# 195. 字符串的反码 
+# 195. |字符串的反码
 
 ## Question description
 
@@ -8,7 +8,51 @@
     一个字符串的反码定义为其所有字符的反码。我们的任务就是计算出给定字符串的反码。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    public static int fc(int n) {
+    	if (n==1) {
+			return 1;
+		}
+    	if (n==2) {
+			return 2;
+		}
+		return fc(n-1)+fc(n-2);
+	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            String string=scanner.nextLine();
+            for (int i = 0; i < string.length(); i++) {
+				if (Character.isLowerCase(string.charAt(i))) {
+					char c=(char) ('a'+'z'-string.charAt(i));
+					string=string.substring(0,i)+c+string.substring(i+1,string.length());
+				    continue;
+				}
+				if (Character.isUpperCase(string.charAt(i))) {
+					char c=(char) ('A'+'Z'-string.charAt(i));
+					string=string.substring(0,i)+c+string.substring(i+1,string.length());
+				}
+			}
+            System.out.println(string);
+        }
+	}
+
+
+}
+```
+
 

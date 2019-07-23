@@ -1,4 +1,4 @@
-# 32. 获取所有非manager的员工emp_no 
+# 32. |获取所有非manager的员工emp_no
 
 ## Question description
 
@@ -20,7 +20,13 @@ CREATE TABLE `employees` (
 PRIMARY KEY (`emp_no`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+SELECT emp_no FROM employees
+WHERE emp_no NOT IN (SELECT emp_no FROM dept_manager)
+```
+
 

@@ -1,4 +1,4 @@
-# 237. 数字在排序数组中出现的次数 
+# 237. |数字在排序数组中出现的次数
 
 ## Question description
 
@@ -6,7 +6,22 @@
 统计一个数字在排序数组中出现的次数。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+public class Solution {
+	    public int GetNumberOfK(int [] array , int k) {
+	    	int count=0;
+	    	for (int i = 0; i < array.length; i++) {
+				if (array[i]==k) {
+					count++;
+				}
+			}
+	        return count;
+	    }
+}
+```
+
 

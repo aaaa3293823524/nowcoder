@@ -1,4 +1,4 @@
-# 333. 表达式合法判断 
+# 333. |表达式合法判断
 
 ## Question description
 
@@ -10,7 +10,12 @@
 返回：true
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+"[a+b*(5-4)]*{x+b+b*(({1+2)}}"
+```
+
 

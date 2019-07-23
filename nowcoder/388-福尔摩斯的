@@ -1,4 +1,4 @@
-# 388. 福尔摩斯的约会 (20) 
+# 388. |福尔摩斯的约会 (20)
 
 ## Question description
 
@@ -10,7 +10,98 @@
   请帮助福尔摩斯解码得到约会的时间。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+    	Scanner scanner=new Scanner(System.in);
+        //int n,m,k;
+        String str1[]=new String[4];
+        String month="ABCDEFG";
+        String mon[]={"MON","TUE","WED","THU","FRI","SAT","SUN"};
+        String hour="0123456789ABCDEFGHIJKLMN";
+        int month1,hour1,min;
+        int len[]=new int[4];
+        int len1,len2;
+        for(int i=0;i<4;i++){
+        	str1[i]=scanner.nextLine();
+        	len[i]=str1[i].length();
+        }
+        len1=len[0]>len[1]?len[1]:len[0];
+        len2=len[2]>len[3]?len[3]:len[2];
+        int count=0;
+        int ss=0;
+        for (int i = 0; i < len1; i++) {
+        	
+			if (Character.isUpperCase(str1[0].charAt(i))&&str1[0].charAt(i)==str1[1].charAt(i)) {
+				if(count==0){
+					ss=i;
+					count++;
+					for (int j = 0; j < 7; j++) {
+						if (str1[0].charAt(i)==month.charAt(j)) {
+							System.out.print(mon[j]+" ");
+							i=0;
+							break;
+						}
+					}
+				}
+				else if (count==1) {
+					count++;
+					for (int i1 = 0; i1 < len1; i1++) {
+						if (str1[0].charAt(i1)==str1[1].charAt(i1)) {
+							if (i1<=ss) {
+								continue;
+							}
+							for (int j = 0; j <=23; j++) {
+								if (hour.charAt(j)==str1[1].charAt(i1)) {
+									if (j<10) {
+										
+										System.out.print("0"+j+":");
+									}else {
+										System.out.print(j+":");
+									}
+									
+									break;
+								}
+							}
+							break;
+						}
+					
+					}
+					}
+				
+				else {
+					break;
+				}
+				
+			}
+		}
+        for (int i = 0; i < len2; i++) {
+        	
+			if (str1[2].charAt(i)==str1[3].charAt(i)&&((str1[3].charAt(i)>='a'&&str1[3].charAt(i)<='z')||(str1[3].charAt(i)>='A'&&str1[3].charAt(i)<='Z'))) {
+				min=i;
+				
+				if (i<10) {
+					System.out.println("0"+i);
+				}else{
+					System.out.println(i);
+				}
+				
+				break;
+			}
+		}
+	}
+    
+}
+
+
+```
+
 

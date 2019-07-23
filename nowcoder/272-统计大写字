@@ -1,4 +1,4 @@
-# 272. 统计大写字母个数 
+# 272. |统计大写字母个数
 
 ## Question description
 
@@ -6,7 +6,57 @@
   找出给定字符串中大写字符(即'A'-'Z')的个数    接口说明    原型：int CalcCapital(String str);    返回值：int       
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.awt.List;
+import java.math.BigInteger;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.Stack;
+import java.util.TreeSet;
+
+public class Main{
+    
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+       
+		while (in.hasNext()) {
+		   String string=in.next();
+		   int sum=0;
+		   for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i)>='A'&&string.charAt(i)<='Z') {
+				sum++;
+			}
+		}
+		   System.out.println(sum);
+		}
+        
+        
+	}
+}
+class MyComparator implements Comparator<Integer>{
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+		// TODO Auto-generated method stub
+		return o1-o2;
+	}
+	
+}
+
+
+```
+
 

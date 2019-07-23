@@ -1,4 +1,4 @@
-# 376. 选大王 
+# 376. |选大王
 
 ## Question description
 
@@ -7,7 +7,32 @@
  现在告诉你 n 和 m，请帮忙求出哪一只猴子能当大王。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+public class Main {
+ public static void main(String[] args) {
+  Scanner scanner = new Scanner(System.in);
+  while (scanner.hasNext()) {
+   int m = scanner.nextInt();
+   int n = scanner.nextInt();
+   System.out.println(fun(m, n));
+  }
+  scanner.close();
+ }
+ private static int fun(int m, int n) {
+  int r = 0;
+  for (int i = 2; i <= m; i++) {
+   r = (r + n) % i;
+  }
+  return r + 1;
+ }
+}
+```
+
 

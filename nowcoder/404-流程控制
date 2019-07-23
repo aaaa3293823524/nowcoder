@@ -1,4 +1,4 @@
-# 404. 流程控制 
+# 404. |流程控制
 
 ## Question description
 
@@ -11,7 +11,12 @@
  5、其余情况，返回参数 num
 
 
-
-
 ## Solution
+
+Language: **['前端']**
+
+```
+{"css":"","js":"\n\nfunction fizzBuzz(num) {\n    if(num%3 == 0 && num%5 == 0)\n        return \"fizzbuzz\";\n    else if(num%3 == 0)\n        return \"fizz\";\n    else if(num%5 == 0)\n        return \"buzz\";\n    else if(num == null || typeof num != \"number\")\n        return false;\n    else return num;\n}","html":"","libs":[]}
+```
+
 

@@ -1,4 +1,4 @@
-# 12. 将所有to_date为9999-01-01的全部更新为NULL 
+# 12. |将所有to_date为9999-01-01的全部更新为NULL
 
 ## Question description
 
@@ -21,7 +21,13 @@ CREATE TABLE IF NOT EXISTS titles_test (
  ('7', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01');
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+UPDATE titles_test SET to_date = NULL, from_date = '2001-01-01'
+WHERE to_date = '9999-01-01'; 
+```
+
 

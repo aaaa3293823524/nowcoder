@@ -1,4 +1,4 @@
-# 196. 链表中倒数第k个结点 
+# 196. |链表中倒数第k个结点
 
 ## Question description
 
@@ -6,7 +6,43 @@
 输入一个链表，输出该链表中倒数第k个结点。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+  public ListNode FindKthToTail(ListNode head,int k) {
+		  ListNode pre,cur,f;
+		  cur=head;
+		  pre=head;
+          int t=1;
+      if(cur==null||k<=0)return null;
+		  while(cur!=null){
+			  
+              cur.val=t;
+              cur=cur.next;
+			  t++;
+		  }
+      if(k>=t)return null;
+      cur=head;
+      while(cur.val!=t-k){
+          cur=cur.next;
+      }
+		  
+	
+          return cur;
+	    }
+}
+```
+
 

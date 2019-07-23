@@ -1,4 +1,4 @@
-# 418. DNA序列 
+# 418. |DNA序列
 
 ## Question description
 
@@ -9,7 +9,46 @@
  
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+// c语言练习.cpp : Defines the entry point for the console application.
+//
+
+#include"stdio.h"
+#include"string.h"
+#include <ctype.h>
+#include <algorithm>
+
+int main(){
+
+	char ch[10000];
+	gets(ch);
+    	int n;
+	scanf("%d",&n);
+	int i=0;
+	int index=0;
+	int max=0;
+    int sum=0;
+	while(ch[i]!='\0')i++;
+	
+	for(int y=0;y<=i-n;y++){
+        sum=0;
+		for(int j=y;j<y+n;j++) 
+		if(ch[j]=='C'||ch[j]=='G'){
+           sum++;
+		}
+        if(sum>max){max=sum;index=y;}
+	}
+	for(i=index;i<index+n;i++)
+	printf("%c",ch[i]);
+    return 0;
+}
+
+
+
+```
+
 

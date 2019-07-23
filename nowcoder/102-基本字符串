@@ -1,4 +1,4 @@
-# 102. 基本字符串压缩 
+# 102. |基本字符串压缩
 
 ## Question description
 
@@ -12,7 +12,12 @@
 返回："welcometonowcoderrrrr"
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+"aabcccccaaa"
+```
+
 

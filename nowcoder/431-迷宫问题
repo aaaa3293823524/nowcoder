@@ -1,4 +1,4 @@
-# 431. 迷宫问题 
+# 431. |迷宫问题
 
 ## Question description
 
@@ -44,7 +44,71 @@ Sample Output
  
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include <iostream>
+#include <algorithm>
+#include <stack>
+using namespace std;
+ 
+int main(){
+    int N, M;
+    while(cin >> N >> M){
+        int **a =new int*[N];
+        for(int i =0; i<N; i++){
+            a[i] =new int[M];
+        }
+        for(int i =0; i<N; i++){
+            for(int j =0; j<M; j++){
+                cin >> a[i][j];
+            }
+        }
+        int dir[4][2] = { {0,1}, {1,0}, {0,-1}, {-1,0} };//点的四个方向：下，右，上，左
+        int visit[11][11] = {0}; //判定该点是否走过
+        bool flag =0; //是否走完
+        stack<pair<int,int>> stk;
+        stk.push(make_pair(0,0));
+        stk.push(make_pair(0,0));
+        visit[0][0] =1;
+        while(!flag){   //深度优先搜索思想，往该点四个方向探查，若有则从这点继续探寻，若没有则回溯到上一个点
+            pair<int,int> p = stk.top();   //回退路径的点
+            stk.pop();
+            int i = p.first, j= p.second;
+            for(int k =0; k <4;k++){  //对四个方向进行探查
+                int dx = i + dir[k][0];
+                int dy = j + dir[k][1];
+                if(dx == N-1&&dy == M-1){ //到达终点
+                    stk.push(make_pair(N-1, M-1));
+                    flag =true;
+                    break;
+                }
+                if(dx>=0&& dx<=N-1&& dy>=0&& dy<=M-1&& a[dx][dy] ==0&& visit[dx][dy] ==0){  //未被访问过且有路径
+                    stk.push(make_pair(dx, dy));
+                    visit[dx][dy] =1;
+                    i = dx;     //从该点继续探查
+                    j = dy;
+                    k=-1;
+                }
+            }
+        }
+        stack<pair<int,int>> outputStk;  //把栈的先后顺序换一下输出
+        while(!stk.empty()){
+            outputStk.push(stk.top());
+            stk.pop();
+        }
+        while(!outputStk.empty()){
+            pair<int,int> p = outputStk.top();
+            outputStk.pop();
+            cout <<"("<<p.first<<","<<p.second<<")"<< endl;
+        }
+    }
+    return 0;
+}
+```
+
 

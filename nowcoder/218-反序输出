@@ -1,4 +1,4 @@
-# 218. 反序输出 
+# 218. |反序输出
 
 ## Question description
 
@@ -6,7 +6,28 @@
 输入任意4个字符(如：abcd)， 并按反序输出(如：dcba)
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            String string=scanner.nextLine();
+            StringBuilder stringBuilder=new StringBuilder(string);
+            System.out.println(stringBuilder.reverse().toString());
+        }
+        
+	}
+
+
+}
+```
+
 

@@ -1,4 +1,4 @@
-# 291. 整数加法 
+# 291. |整数加法
 
 ## Question description
 
@@ -6,7 +6,31 @@
 请设计一个算法能够完成两个用字符串存储的整数进行相加操作，对非法的输入则返回error
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+
+//注意int、long均不能满足需求
+import java.util.Scanner;
+import java.math.BigInteger;
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        try{
+            BigInteger  n = scanner.nextBigInteger ();
+            BigInteger  m = scanner.nextBigInteger ();
+            System.out.println(m.add(n));
+        }catch(Exception e)
+        {
+            System.out.println("error");
+        } 
+    }
+}
+
+```
+
 

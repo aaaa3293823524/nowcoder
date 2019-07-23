@@ -1,4 +1,4 @@
-# 405. 倒置字符串 
+# 405. |倒置字符串
 
 ## Question description
 
@@ -6,7 +6,24 @@
 将一句话的单词进行倒置，标点不倒置。比如 I like beijing. 经过函数后变为：beijing. like I
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+import java.util.*;
+public class Main{
+public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+        String str = scan.nextLine();
+        String[] string = str.split(" ");
+        for(int i=0;i<string.length-1;i++){
+            System.out.print(string[string.length-i-1]+" ");
+        }
+    System.out.print(string[0]);
+    }
+}
+```
+
 

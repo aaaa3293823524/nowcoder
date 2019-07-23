@@ -1,4 +1,4 @@
-# 53. 整数无序数组求第K大数 
+# 53. |整数无序数组求第K大数
 
 ## Question description
 
@@ -6,7 +6,66 @@
 给定无序整数序列，求其中第K大的数，例如{45，67，33，21}，第2大数为45
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String string[]=scanner.nextLine().split(" ");
+            int k=scanner.nextInt();
+            int a[]=new int[string.length];
+            for (int i=0;i<string.length;i++){
+                a[i]=Integer.valueOf(string[i]);
+            }
+            Arrays.sort(a);
+            System.out.println(a[string.length-k]);
+
+        }
+
+    }
+    public static  int cal(int submit,int pass){
+        float s=pass/submit;
+        System.out.println(s);
+        if(s>=0&&s<=0.3){
+           return 5;
+        }else if(s>0.3&&s<=0.6){
+            return 4;
+        }else if(s>0.6&&s<=1){
+            return 3;
+        }
+        return -1;
+    }
+
+}
+class G{
+    public String name;
+    public int submit;
+    public int pass;
+    public int nan;
+    public G(String name,int submit,int pass){
+        this.name=name;
+        this.submit=submit;
+        this.pass=pass;
+        this.nan=0;
+    }
+
+}
+class Mycomparator implements Comparator<G>{
+    @Override
+    public int compare(G o1, G o2) {
+        return o1.name.compareTo(o2.name);
+    }
+}
+
+
+
+```
+
 

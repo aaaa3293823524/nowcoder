@@ -1,4 +1,4 @@
-# 5. 查找字符串'10,A,B' 中逗号','出现的次数cnt 
+# 5. |查找字符串'10,A,B' 中逗号','出现的次数cnt
 
 ## Question description
 
@@ -6,7 +6,12 @@
 查找字符串'10,A,B' 中逗号','出现的次数cnt。
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+select length('10,A,B') -length(replace('10,A,B',",",""))
+```
+
 

@@ -1,4 +1,4 @@
-# 317. 骆驼命名法 
+# 317. |骆驼命名法
 
 ## Question description
 
@@ -7,7 +7,44 @@
  请你帮可怜的程序员们自动转换变量名。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here
+
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.concurrent.CountDownLatch;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		
+		
+		while(scanner.hasNext()){
+		    String string=scanner.nextLine();
+		    for (int i = 0; i < string.length(); i++) {
+				if (string.charAt(i)=='_') {
+					string=string.substring(0,i)+(Character.toUpperCase(string.charAt(i+1)))+string.substring(i+2,string.length());
+				}
+			}
+		    System.out.println(string);
+		}
+		}
+		
+    
+}
+
+```
+
 

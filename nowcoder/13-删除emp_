@@ -1,4 +1,4 @@
-# 13. 删除emp_no重复的记录，只保留最小的id对应的记录。 
+# 13. |删除emp_no重复的记录，只保留最小的id对应的记录。
 
 ## Question description
 
@@ -21,7 +21,13 @@ CREATE TABLE IF NOT EXISTS titles_test (
  ('7', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01');
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+DELETE FROM titles_test WHERE id NOT IN 
+(SELECT MIN(id) FROM titles_test GROUP BY emp_no)
+```
+
 

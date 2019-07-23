@@ -1,4 +1,4 @@
-# 187. 合并符串 
+# 187. |合并符串
 
 ## Question description
 
@@ -8,7 +8,74 @@
 将S1的第二个字符作为S的第三个字符，将S2的倒数第二个字符作为S的第四个字符，以此类推。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    public static int fc(int n) {
+    	if (n==1) {
+			return 1;
+		}
+    	if (n==2) {
+			return 2;
+		}
+		return fc(n-1)+fc(n-2);
+	}
+    public static boolean isSu(int n){
+    	if (n<=1) {
+			return false;
+		}
+    	for (int i = 2; i <=n/2; i++) {
+			if (n%i==0) {
+				return false;
+			}
+		}
+    	return true;
+    }
+    public static boolean  name1(int n) {
+    	n%=10;
+    	if (n==1) {
+			return true;
+		}
+		return false;
+	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            String string=scanner.nextLine();
+            String string2=scanner.nextLine();
+            int len=string.length()+string2.length();
+            String string3="";
+            boolean flag=true;
+            int t1=0;
+            int t2=string2.length()-1;
+            for (int i = 0; i < len; i++) {
+				if (flag) {
+					string3+=string.charAt(t1++);
+					flag=!flag;
+				}else{
+					string3+=string2.charAt(t2--);
+					flag=!flag;
+				}
+			}
+           
+			System.out.println(string3);
+        }
+	}
+
+
+}
+```
+
 

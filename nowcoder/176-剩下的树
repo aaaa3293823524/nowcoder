@@ -1,4 +1,4 @@
-# 176. 剩下的树 
+# 176. |剩下的树
 
 ## Question description
 
@@ -8,7 +8,36 @@
     可能有M(1<=M<=100)个区间，区间之间可能有重叠。现在要求移走所有区间的树之后剩下的树的个数。
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    int L, M;
+    while (cin >> L >> M)
+    {
+        vector<int> data(L + 1, 1);
+        int start, end, cnt = 0;
+        for (int i = 0; i < M; i++)
+        {
+            cin >> start >> end;
+            for (int i = start; i <= end; i++)
+                data[i] = 0;
+        }
+        for (vector<int>::iterator it = data.begin(); it != data.end(); it++)
+            if (*it == 1)
+                cnt++;
+        cout << cnt << endl;
+    }
+    return 0;
+}
+```
+
 

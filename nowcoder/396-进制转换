@@ -1,4 +1,4 @@
-# 396. 进制转换 
+# 396. |进制转换
 
 ## Question description
 
@@ -6,7 +6,30 @@
 给定一个十进制数M，以及需要转换的进制数N。将十进制数M转化为N进制数
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include <iostream>
+using namespace std;
+int main(){
+    string s="",table="0123456789ABCDEF";
+    int m,n;
+    cin>>m>>n;
+    while(m){
+        if(m<0){
+            m=-m;
+            cout<<"-";
+        }
+        s=table[m%n]+s;
+        m/=n;
+    }
+    cout<<s<<endl;
+    return 0;
+}
+```
+
 

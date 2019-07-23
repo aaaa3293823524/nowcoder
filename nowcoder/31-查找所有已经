@@ -1,4 +1,4 @@
-# 31. 查找所有已经分配部门的员工的last_name和first_name 
+# 31. |查找所有已经分配部门的员工的last_name和first_name
 
 ## Question description
 
@@ -20,7 +20,14 @@ CREATE TABLE `employees` (
 PRIMARY KEY (`emp_no`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+select last_name,first_name, dept_emp.dept_no from 
+dept_emp,employees where dept_emp.emp_no=employees.emp_no
+
+```
+
 

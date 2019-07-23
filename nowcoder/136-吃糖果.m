@@ -1,4 +1,4 @@
-# 136. 吃糖果 
+# 136. |吃糖果
 
 ## Question description
 
@@ -14,7 +14,22 @@
 现在给定N，请你写程序求出名名吃巧克力的方案数目。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+def s(n):
+    if n==1:return  1
+    if n==2:return  2
+    return s(n-1)+s(n-2)
+
+while 1:
+    try:
+        n=int(input())
+        print(s(n))
+    except:
+        break
+```
+
 

@@ -1,4 +1,4 @@
-# 422. 输入n个整数，输出其中最小的k个 
+# 422. |输入n个整数，输出其中最小的k个
 
 ## Question description
 
@@ -21,7 +21,48 @@ unsignedint uiK   //需输出uiK个整数
  
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+    int n,m;
+    while(cin>>n>>m)
+    {
+        int *p;
+        p=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>p[i];
+        }
+ 
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n-i-1;j++)
+            {
+                if(p[j]>p[j+1])
+                {
+                    int t=p[j];
+                    p[j]=p[j+1];
+                    p[j+1]=t;
+                }
+            }
+        }
+ 
+        for(int k=0;k<m-1;k++)
+        {
+            cout<<p[k]<<'\40';
+        }
+        cout<<p[m-1]<<endl;
+    }
+    return 0;
+}
+```
+
 

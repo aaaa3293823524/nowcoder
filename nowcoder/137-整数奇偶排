@@ -1,4 +1,4 @@
-# 137. 整数奇偶排序 
+# 137. |整数奇偶排序
 
 ## Question description
 
@@ -8,7 +8,19 @@
 2.然后输出其中的偶数,并按从小到大排列。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+while True:
+    try:
+        a=list(map(int,input().split()))
+        print(" ".join(map(str,sorted(filter(lambda c:c%2==1,a),reverse=True)+sorted(filter(lambda c:c%2==0,a)))))
+    except:
+        break
+```
+
 

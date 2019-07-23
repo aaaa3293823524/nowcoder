@@ -1,4 +1,4 @@
-# 441. 两种排序方法 
+# 441. |两种排序方法
 
 ## Question description
 
@@ -12,7 +12,58 @@
   考拉想知道自己的这些字符串排列顺序是否满足这两种排序方法，考拉要忙着吃树叶，所以需要你来帮忙验证。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+
+import java.util.Scanner;
+public class Main{
+         
+    //两种排序方法
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            int n = Integer.valueOf(in.nextLine());
+            String str[] = new String[n+1];
+            for(int i=1; i<=n; i++){
+                str[i] = in.nextLine();
+            }
+            boolean zd = iszd(str);
+            boolean cd = iscd(str);
+            if(zd && cd)
+                System.out.println("both");
+            else if(zd)
+                System.out.println("lexicographically");
+            else if(cd)
+                System.out.println("lengths");
+            else
+                System.out.println("none");
+        }  
+    }
+     
+    //字典判断
+    public static boolean iszd(String[] str){
+        for(int i=1; i<str.length-1; i++){
+            if(str[i].compareTo(str[i+1]) > 0)
+                return false;
+        }
+        return true;
+    }
+     
+    //字符串长度判断
+    public static boolean iscd(String[] str){
+         
+        for(int i=1; i<str.length-1; i++){
+            if(str[i].length() > str[i+1].length())
+                return false;
+        }
+        return true;
+    }
+}
+```
+
 

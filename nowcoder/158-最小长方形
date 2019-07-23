@@ -1,4 +1,4 @@
-# 158. 最小长方形 
+# 158. |最小长方形
 
 ## Question description
 
@@ -6,7 +6,37 @@
     给定一系列2维平面点的坐标(x, y)，其中x和y均为整数，要求用一个最小的长方形框将所有点框在内。长方形框的边分别平行于x和y坐标轴，点落在边上也算是被框在内。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+import java.util.Collections;
+import java.util.List;
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNext()){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            List<Integer> xl = new ArrayList<>();
+            List<Integer> yl = new ArrayList<>();
+            while(x != 0 && y != 0){
+                xl.add(x);
+                yl.add(y);
+                x = sc.nextInt();
+                y = sc.nextInt();
+            }
+            Collections.sort(xl);
+            Collections.sort(yl);
+            System.out.println(xl.get(0)+" "+yl.get(0)+" "+xl.get(xl.size()-1)+" "+yl.get(yl.size()-1));
+        }
+    }
+}
+```
+
 

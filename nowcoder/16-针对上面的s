@@ -1,4 +1,4 @@
-# 16. 针对上面的salaries表emp_no字段创建索引idx_emp_no 
+# 16. |针对上面的salaries表emp_no字段创建索引idx_emp_no
 
 ## Question description
 
@@ -13,7 +13,12 @@ CREATE TABLE `salaries` (
  create index idx_emp_no on salaries(emp_no);
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+SELECT * FROM salaries INDEXED BY idx_emp_no WHERE emp_no = 10005
+```
+
 

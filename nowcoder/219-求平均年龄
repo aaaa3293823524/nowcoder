@@ -1,4 +1,4 @@
-# 219. 求平均年龄 
+# 219. |求平均年龄
 
 ## Question description
 
@@ -6,7 +6,32 @@
 班上有学生若干名，给出每名学生的年龄（整数），求班上所有学生的平均年龄，保留到小数点后两位。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+        	
+            int n=scanner.nextInt();
+            int a[]=new int[n];
+            double sum=0;
+            for (int i = 0; i < a.length; i++) {
+				a[i]=scanner.nextInt();
+				sum+=a[i];
+			}
+            System.out.printf("%.2f",sum/n);
+        }
+        
+	}
+}
+```
+
 

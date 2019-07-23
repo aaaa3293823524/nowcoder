@@ -1,4 +1,4 @@
-# 180. 有几个PAT（25） 
+# 180. |有几个PAT（25）
 
 ## Question description
 
@@ -8,7 +8,38 @@
   现给定字符串，问一共可以形成多少个PAT？
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include <iostream>
+#include <stdio.h>
+ 
+using namespace std;
+ 
+int main()
+{
+    // 初始化变量
+    char c; int p=0, pa=0, pat=0;
+ 
+    // 统计
+    while(scanf("%c", &c) && c!=' ' && c!='\n') {
+        if(c == 'P') {
+            p++;
+        } else if(c == 'A') {
+            pa += p;
+            pa = pa%1000000007;
+        } else {
+            pat += pa;
+            pat = pat%1000000007;
+        }
+    }
+    printf("%d\n", pat);
+    return 0;
+}
+```
+
 

@@ -1,4 +1,4 @@
-# 3. 对于employees表中，给出奇数行的first_name 
+# 3. |对于employees表中，给出奇数行的first_name
 
 ## Question description
 
@@ -53,7 +53,19 @@ PRIMARY KEY (`emp_no`));输出格式:
 
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+
+
+SELECT e1.first_name FROM 
+  (SELECT e2.first_name, 
+    (SELECT COUNT(*) FROM employees AS e3 
+     WHERE e3.first_name <= e2.first_name) 
+   AS rowid FROM employees AS e2) AS e1
+WHERE e1.rowid % 2 = 1
+```
+
 

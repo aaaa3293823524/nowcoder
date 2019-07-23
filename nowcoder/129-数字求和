@@ -1,4 +1,4 @@
-# 129. 数字求和 
+# 129. |数字求和
 
 ## Question description
 
@@ -6,7 +6,19 @@
 给定一个正整数a，以及另外的5个正整数，问题是：这5个整数中，小于a的整数的和是多少？
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+while True:
+    try:
+        a=list(map(int,input().split()))
+        print(sum(filter(lambda c:c<a[0],a[1:])))
+    except:
+        break
+```
+
 

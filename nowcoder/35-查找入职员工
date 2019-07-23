@@ -1,4 +1,4 @@
-# 35. 查找入职员工时间排名倒数第三的员工所有信息 
+# 35. |查找入职员工时间排名倒数第三的员工所有信息
 
 ## Question description
 
@@ -14,7 +14,14 @@ CREATE TABLE `employees` (
 PRIMARY KEY (`emp_no`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+select *from employees 
+where hire_date=(select distinct (hire_date) from employees
+                order by hire_date  desc limit 2,1)
+```
+
 

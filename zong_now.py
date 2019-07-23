@@ -100,9 +100,9 @@ for i in list:
     daima = soup.find('pre').text
     print(daima)
     lan=re.findall(r'语言：(\w+)', html)
-    for ques in questions:
-        if ques['title']==problem_title and ques['lan']==lan:
-            continue
+    # for ques in questions:
+    #     if ques['title']==problem_title and ques['lan']==lan:
+    #         continue
     g += 1
     print(g)
     question['title_id'] = g
@@ -113,7 +113,12 @@ for i in list:
     question['link']=i
     questions.append(question)
 
-
+    ques_file = os.path.join(LP_PREFIX, 'nowcoder-publisher', 'nowcoder', 'question.json')
+    tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'readme.txt'), encoding='utf-8').read())
+    s = tmpl.render(questions=questions)
+    filename = 'README.md'
+    with open(os.path.join(LP_PREFIX, 'nowcoder-publisher', filename), 'a+', encoding='utf-8') as f:
+        f.write(s)
     # print(re.findall(r'语言：(\S+<)', html)[0].strip('<'))
 
     # solution['title_id'] = i
@@ -128,7 +133,7 @@ for i in list:
     tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'solution.txt'), encoding='utf-8').read())
     ques = tmpl.render(question=question)
 
-    with open(os.path.join(LP_PREFIX,'nowcoder-publisher','nowcoder', filename[0:9]), 'w', encoding='utf-8') as f:
+    with open(os.path.join(LP_PREFIX,'nowcoder-publisher','nowcoder', filename[0:9]), 'w+', encoding='utf-8') as f:
         f.write(ques)
     # with open(r'%s-%s.md' % (g, problem_title[0:8]), 'a+', encoding='utf-8') as f:
     #     f.write('{0}{0}\n'.format('='*20))
@@ -139,12 +144,7 @@ for i in list:
     #     f.write(daima + '\n')
     #     f.write("```" + '\n')
 
-ques_file = os.path.join(LP_PREFIX, 'nowcoder-publisher', 'nowcoder', 'question.json')
-tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'readme.txt'), encoding='utf-8').read())
-s = tmpl.render(questions=questions)
-filename = 'README.md'
-with open(os.path.join(LP_PREFIX, 'nowcoder-publisher', filename), 'w', encoding='utf-8') as f:
-    f.write(s)
+
 
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
@@ -155,7 +155,7 @@ cmds.append('git init')
 cmds.append('git add .')
 cmds.append('git commit -m "Auto Deployment"')
 cmds.append('git remote add origin git@github.com:aaaa3293823524/nowcoder.git')
-cmds.append('git push -u origin master')
+cmds.append('git push -f -q origin master')
 
 for cmd in cmds:
     try:

@@ -1,4 +1,4 @@
-# 293. 字符串中找出连续最长的数字串 
+# 293. |字符串中找出连续最长的数字串
 
 ## Question description
 
@@ -6,7 +6,55 @@
 读入一个字符串str，输出字符串str中的连续最长的数字串
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.awt.List;
+import java.math.BigInteger;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main {
+  
+    public static void main(String[] args) {
+Scanner in = new Scanner(System.in);
+    	String str="";
+    	String str1="";
+    	//Node root=new Node(0);
+        while (in.hasNext()) {
+            String string=in.nextLine();
+            int sum=0,max=0;
+            for (int i = 0; i < string.length(); i++) {
+				if (Character.isDigit(string.charAt(i))) {
+					sum++;
+					//list1.add(string.charAt(i));
+					str+=string.charAt(i);
+					
+					if (sum>max) {
+						max=sum;
+						str1="";
+						str1=str;
+						
+					}
+				}else{
+					
+					str="";
+					sum=0;
+				}
+			}
+            System.out.println(str1);
+        }
+	}
+}
+
+```
+
 

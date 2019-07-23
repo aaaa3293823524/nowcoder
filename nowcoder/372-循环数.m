@@ -1,4 +1,4 @@
-# 372. 循环数 
+# 372. |循环数
 
 ## Question description
 
@@ -15,7 +15,71 @@
  请写一个程序，判断给定的数不是循环数。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+public class Main {
+     
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+ 
+        while(sc.hasNext()){
+             
+            String str = sc.nextLine();
+             
+            String twostr = str+str;
+            boolean flag = true;
+             
+            for(int i= 1; i<=6 ;i++)
+            {
+                String result = mutli(str,i);
+                if(!isCircle(twostr,result)){
+                    flag = false;
+                    break;
+                }      
+            }
+            if(flag)
+                System.out.println("Yes");
+            else
+                System.out.println("No");
+        }
+    }
+ 
+     public static String mutli(String s,int n)
+            {
+                char[] ss = s.toCharArray();
+                String result = null;
+                int jinwei = 0;
+                for(int i = s.length()-1;i >= 0;i--)
+                {
+                    char c = s.charAt(i);
+                    int nn = c - '0';
+                    int o = nn * n + jinwei;
+                    ss[i] = (char) ((o)%10 + '0');
+                    jinwei = o / 10;
+                }
+                if(jinwei==0){
+                    result = String.valueOf(ss);
+                }else {
+                    result = String.valueOf(jinwei)+String.valueOf(ss);
+                }
+                return result;
+            }
+ 
+            private static boolean isCircle(String strcycle,String str) {
+                if(strcycle.contains(str)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+}
+
+```
+
 

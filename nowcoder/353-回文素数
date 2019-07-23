@@ -1,4 +1,4 @@
-# 353. 回文素数 
+# 353. |回文素数
 
 ## Question description
 
@@ -6,7 +6,55 @@
 如果一个整数只能被1和自己整除,就称这个数是素数。 如果一个数正着反着都是一样,就称为这个数是回文数。例如:6, 66, 606, 6666 如果一个数字既是素数也是回文数,就称这个数是回文素数 牛牛现在给定一个区间[L, R],希望你能求出在这个区间内有多少个回文素数。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+	public static boolean huiwen(int n){
+		String string=String.valueOf(n);
+		StringBuilder stringBuilder=new StringBuilder(string);
+		String string2=stringBuilder.reverse().toString();
+		for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i)!=string2.charAt(i)) {
+				return false;
+			}
+		}
+		return true;
+	}
+    public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		String string;
+		boolean flag[]=new boolean[1020];
+		int prime[]=new int[1020];
+		int count=0;
+		for (int i = 2; i < prime.length; i++) {
+			if (!flag[i]) {
+				prime[count++]=i;
+				for (int j = i; j < prime.length; j+=i) {
+					flag[j]=true;
+				}
+			}
+		}
+		int l=scanner.nextInt();
+		int r=scanner.nextInt();
+		int sum=0;
+		for (int i = 0; i <count; i++) {
+			if (prime[i]>=l&&prime[i]<=r&&huiwen(prime[i])) {
+				sum++;
+			}
+		}
+		System.out.println(sum);
+	}
+}
+
+```
+
 

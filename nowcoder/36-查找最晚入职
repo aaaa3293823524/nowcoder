@@ -1,4 +1,4 @@
-# 36. 查找最晚入职员工的所有信息 
+# 36. |查找最晚入职员工的所有信息
 
 ## Question description
 
@@ -14,7 +14,12 @@ CREATE TABLE `employees` (
 PRIMARY KEY (`emp_no`));
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+select *from employees where hire_date=(select max(hire_date) from employees)
+```
+
 

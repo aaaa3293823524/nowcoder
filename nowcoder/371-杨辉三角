@@ -1,4 +1,4 @@
-# 371. 杨辉三角 
+# 371. |杨辉三角
 
 ## Question description
 
@@ -12,7 +12,19 @@
  上面的图形熟悉吗？它就是我们中学时候学过的杨辉三角。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.math.BigInteger;
+import java.util.Scanner;
+ 
+public class Main {
+public static void main(String[] args) {  Scanner sc=new Scanner(System.in);  while(sc.hasNext()){  int n=sc.nextInt();  if(n==0){  break;  }  BigInteger[][] array=new BigInteger[n][1];  for(int i=1;i<=n;i++){  array[i-1]=new BigInteger[i];  }  for(int i=0;i<array.length;i++){  array[i][0]=BigInteger.ONE;  array[i][array[i].length-1]=BigInteger.ONE;  System.out.print(array[i][0]+" ");  for(int j=1;j<array[i].length-1;j++){  array[i][j]=array[i-1][j].add(array[i-1][j-1]);  System.out.print(array[i][j]+" ");  }  if(i==0){  System.out.println();  }else{  System.out.println(1);  }  }  System.out.println();  }  sc.close();  }
+}
+```
+
 

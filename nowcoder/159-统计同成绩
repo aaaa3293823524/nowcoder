@@ -1,4 +1,4 @@
-# 159. 统计同成绩学生人数 
+# 159. |统计同成绩学生人数
 
 ## Question description
 
@@ -6,7 +6,42 @@
 读入N名学生的成绩，将获得某一给定分数的学生人数输出。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(scanner.hasNext()){
+            int n=scanner.nextInt();
+            int a[]=new int[n];
+            for (int i = 0; i < a.length; i++) {
+				a[i]=scanner.nextInt();
+			}
+            int t=scanner.nextInt();
+            int count=0;
+            for (int i = 0; i < a.length; i++) {
+				if (t==a[i]) {
+					count++;
+				}
+			}
+            System.out.println(count);
+        }
+	}
+
+
+}
+```
+
 

@@ -1,4 +1,4 @@
-# 1. 获取所有员工的emp_no 
+# 1. |获取所有员工的emp_no
 
 ## Question description
 
@@ -176,7 +176,17 @@ PRIMARY KEY (`emp_no`,`from_date`));输出格式:
 
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+
+
+select e.emp_no,de.dept_no,eb.btype,eb.recevied
+from employees e 
+inner join dept_emp de on e.emp_no=de.emp_no
+left join  emp_bonus eb on e.emp_no=eb.emp_no
+```
+
 

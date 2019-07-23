@@ -1,4 +1,4 @@
-# 378. 分解因数 
+# 378. |分解因数
 
 ## Question description
 
@@ -7,7 +7,55 @@
 ≤ a2 ≤ a3 ≤ ... ≤ an。其中a1、a2、...、an均为素数。  先给出一个整数a，请输出分解后的因子。
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<iostream>
+#include<vector>
+#include<stdio.h>
+using namespace std;
+int A[78500];
+int prim(){
+    int index=0,i;
+    vector<bool> b(1000000,false);
+    for(i=2;i<1000000;i++){
+        if(!b[i]){
+            A[index++]=i;
+        }
+        for(int j=2*i;j<1000000;j+=i){
+            b[j]=true;
+        }
+    }
+    return index;
+}
+int main(){
+    int index=prim();
+    int n;
+    while(scanf("%d",&n)!=EOF){
+        printf("%d = ",n);
+        while(n!=1){
+            for(int i=0;n!=1&&i<index;i++){
+                if(n%A[i]==0){
+                    while(n%A[i]==0){
+                        n/=A[i];
+                        if(n!=1){
+                            printf("%d * ",A[i]);
+                        }
+                        else{
+                            printf("%d",A[i]);
+                            printf("\n");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+```
+
 

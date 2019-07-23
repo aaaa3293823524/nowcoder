@@ -1,4 +1,4 @@
-# 11. 将id=5以及emp_no=10001的行数据替换成id=5以及emp_no=10005 
+# 11. |将id=5以及emp_no=10001的行数据替换成id=5以及emp_no=10005
 
 ## Question description
 
@@ -21,7 +21,13 @@ CREATE TABLE IF NOT EXISTS titles_test (
  ('7', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01');
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+update titles_test set emp_no=10005
+where id=5 and emp_no=10001
+```
+
 

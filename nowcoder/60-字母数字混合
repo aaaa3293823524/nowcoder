@@ -1,4 +1,4 @@
-# 60. 字母数字混合排序 
+# 60. |字母数字混合排序
 
 ## Question description
 
@@ -6,7 +6,42 @@
 输入一串字符，包含数字[0-9]和小写字母[a-z]，要求按数字从小到大、字母从a到z排序，并且所有数字排在字母后面
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+/**
+ * 计数排序
+ * @author wylu
+ */
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] s = br.readLine().toCharArray();
+ 
+        int[] letters = new int[26], digits = new int[10];
+        for (char ch : s) {
+            if (ch >= '0' && ch <= '9') digits[ch - '0']++;
+            else letters[ch - 'a']++;
+        }
+ 
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < letters.length; i++) {
+            for (int j = 0; j < letters[i]; j++) sb.append((char) (i + 'a'));
+        }
+        for (int i = 0; i < digits.length; i++) {
+            for (int j = 0; j < digits[i]; j++) sb.append((char) (i + '0'));
+        }
+        System.out.println(sb);
+    }
+}
+```
+
 

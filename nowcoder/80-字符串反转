@@ -1,4 +1,4 @@
-# 80. 字符串反转 
+# 80. |字符串反转
 
 ## Question description
 
@@ -7,7 +7,14 @@
 
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+a=list(input())[::-1]
+for i in range(len(a)):
+    print(a[i],end='')
+```
+
 

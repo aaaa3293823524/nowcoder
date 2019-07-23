@@ -1,4 +1,4 @@
-# 364. 数字三角形 
+# 364. |数字三角形
 
 ## Question description
 
@@ -12,7 +12,42 @@
  请寻找最佳一条路径，使得这条路径上节点的数字总和最大。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here cpp
+
+
+import java.util.Scanner;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()) {
+            int n=sc.nextInt();
+            int[][] nums=new int[n][n];
+            for(int i=0;i<n;i++) {
+                for(int j=0;j<=i;j++) {
+                    nums[i][j]=sc.nextInt();
+                }
+            }
+            int[][] dp=new int[n][n];
+            for(int i=n-1;i>=0;i--) {
+                for(int j=0;j<=i;j++) {
+                    if(i==n-1) {
+                        dp[i][j]=nums[i][j];
+                    }else {
+                        dp[i][j]=Math.max(dp[i+1][j]+nums[i][j], dp[i+1][j+1]+nums[i][j]);
+                    }
+                     
+                }
+            }
+            System.out.println(dp[0][0]);
+        }
+    }
+}
+```
+
 

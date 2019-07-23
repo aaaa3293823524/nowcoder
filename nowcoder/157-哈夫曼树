@@ -1,4 +1,4 @@
-# 157. 哈夫曼树 
+# 157. |哈夫曼树
 
 ## Question description
 
@@ -6,7 +6,35 @@
 哈夫曼树，第一行输入一个数n，表示叶结点的个数。需要用这些叶结点生成哈夫曼树，根据哈夫曼树的概念，这些结点有权值，即weight，题目需要输出所有结点的值与权值的乘积之和。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.Scanner;
+import java.util.PriorityQueue;
+ 
+public class Main{
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+            int n = in.nextInt();
+            PriorityQueue<Integer> q = new PriorityQueue<Integer>();
+            for(int i=0;i<n;i++)
+                q.add(in.nextInt());
+            int ans = 0;
+            while(q.size()>1){
+                int first = q.poll();
+                int sec = q.poll();
+                ans += (first + sec);
+                q.add(first+sec);
+            }
+            System.out.println(ans);
+        }
+    }
+}
+```
+
 

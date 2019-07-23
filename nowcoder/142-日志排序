@@ -1,4 +1,4 @@
-# 142. 日志排序 
+# 142. |日志排序
 
 ## Question description
 
@@ -13,7 +13,23 @@ hs_10000_p 2007-01-17 19:22:53,315 253.035(s)
 如果两个计算任务消耗的时间相同，则将开始执行时间早的计算任务排在前面。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+res=[]
+str = input()
+while str:
+    res.append(str)
+    try:
+        str = input()
+    except:
+        break
+res.sort(key=lambda c: (float(c.split()[-1].rstrip("(s)")), c.split()[1], c.split()[2]))
+for i in res:    print(i)
+```
+
 

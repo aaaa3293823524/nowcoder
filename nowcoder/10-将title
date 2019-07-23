@@ -1,4 +1,4 @@
-# 10. 将titles_test表名修改为titles_2017 
+# 10. |将titles_test表名修改为titles_2017
 
 ## Question description
 
@@ -21,7 +21,12 @@ CREATE TABLE IF NOT EXISTS titles_test (
  ('7', '10003', 'Senior Engineer', '1995-12-03', '9999-01-01');
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+ALTER TABLE titles_test RENAME TO titles_2017
+```
+
 

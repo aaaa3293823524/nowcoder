@@ -1,4 +1,4 @@
-# 77. 坐标移动 
+# 77. |坐标移动
 
 ## Question description
 
@@ -47,7 +47,31 @@ A10;S20;W10;D30;X;A1A;B10A11;;A10;
 
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+while True:
+    try:
+        s = raw_input()
+        res = s.split(';')
+        x, y = 0, 0
+        for i in res:
+            if i.isalnum() and 'A' in i and i.replace('A','',1).isdigit():
+                x = x - int(i.replace('A',''))
+            if i.isalnum() and 'S' in i and i.replace('S','',1).isdigit():
+                y = y - int(i.replace('S',''))
+            if i.isalnum() and 'W' in i and i.replace('W','',1).isdigit():
+                y = y + int(i.replace('W',''))
+            if i.isalnum() and 'D' in i and i.replace('D','',1).isdigit():
+                x = x + int(i.replace('D',''))
+        out = str(x) + ',' + str(y)
+        print out
+    except:
+        break
+```
+
 

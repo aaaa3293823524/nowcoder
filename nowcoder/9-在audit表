@@ -1,4 +1,4 @@
-# 9. 在audit表上创建外键约束，其emp_no对应employees_test表的主键id 
+# 9. |在audit表上创建外键约束，其emp_no对应employees_test表的主键id
 
 ## Question description
 
@@ -18,7 +18,18 @@ CREATE TABLE employees_test(
  );
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+
+
+DROP TABLE audit;
+CREATE TABLE audit(
+    EMP_no INT NOT NULL,
+    create_date datetime NOT NULL,
+    FOREIGN KEY(EMP_no) REFERENCES employees_test(ID));
+```
+
 

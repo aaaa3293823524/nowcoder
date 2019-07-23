@@ -1,4 +1,4 @@
-# 121. 对称平方数 
+# 121. |对称平方数
 
 ## Question description
 
@@ -6,7 +6,14 @@
 打印所有不超过n（n<256）的，其平方具有对称性质的数。如11*11=121。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+for i in range(1, 256):
+    if str(i**2)==str(i**2)[::-1]:
+        print(i)
+```
+
 

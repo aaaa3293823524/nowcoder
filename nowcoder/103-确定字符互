@@ -1,4 +1,4 @@
-# 103. 确定字符互异 
+# 103. |确定字符互异
 
 ## Question description
 
@@ -12,7 +12,12 @@
 返回：False
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+"aeiou"
+```
+
 

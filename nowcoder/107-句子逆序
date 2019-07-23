@@ -1,4 +1,4 @@
-# 107. 句子逆序 
+# 107. |句子逆序
 
 ## Question description
 
@@ -12,7 +12,12 @@
  
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+print(" ".join(input().split()[::-1]))
+```
+
 

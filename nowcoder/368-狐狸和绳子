@@ -1,4 +1,4 @@
-# 368. 狐狸和绳子 
+# 368. |狐狸和绳子
 
 ## Question description
 
@@ -10,7 +10,38 @@
 例如：有三根绳子所能承受的最大的重量分别为1N、2N、4N(其中N表示重量的单位牛顿)，那当物体的重量大于3N时第一根绳子就会断掉。计算这三根绳子所能承受的最大的重量就是计算这三根绳子所有的组合中所能承受的最大的重量，这些组合分别为{1}、{2}、{4}、{1、2}、{1、4}、{2、4}、{1，2，4}，当你挑选出其中的一种组合来吊起一个物体时要保证这个组合中的每根绳子都不可断，如{1、4}所能承受的最大的重量为2N，很明显这三根绳子所能承受的最大的重量为4N。 现在的问题是猎人交给你n根绳子，请你帮他计算下这n根绳子所能承受的最大的重量。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here
+import java.util.Arrays;
+import java.util.Scanner;
+ 
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNext()) {
+			int num = sc.nextInt();
+			int[] arr = new int[num];
+			for (int i = 0; i < num; i++) {
+				arr[i] = sc.nextInt();
+			}
+            //排序是因为取得每个组合最小值的最大值
+			Arrays.sort(arr);
+			int strength = 0;
+			//对于每一组包含i个的组合，取每个组合最小值组成的集合的最大值，乘以i，就是包含i个的组合中的最大承受力
+			for (int i = 1; i <= num; i++) {
+				strength = arr[num-i]*i>strength ? arr[num-i]*i :strength ; 
+			}
+			
+			System.out.println(strength);
+		}
+	}
+	
+}
+
+```
+
 

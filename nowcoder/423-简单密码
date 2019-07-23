@@ -1,4 +1,4 @@
-# 423. 简单密码 
+# 423. |简单密码
 
 ## Question description
 
@@ -18,7 +18,49 @@
 
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+// c语言练习.cpp : Defines the entry point for the console application.
+//
+
+#include"stdio.h"
+#include"string.h"
+#include <ctype.h>
+#include <algorithm>
+
+int main(){
+	char xiao[27]="bcdefghijklmnopqrstuvwxyza";
+	char da[27]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char shu[27]="22233344455566677778889999";
+	char ch[10000];
+	gets(ch);
+	int i=0;
+/*while(ch[i]!='\0'){
+		printf("%c",ch[i]);
+		i++;
+    }
+printf("sadasdsada\n");*/
+	while(ch[i]!='\0'){ 
+		
+		
+		if(ch[i]>='a'&&ch[i]<='z'){
+			ch[i]=shu[(int)(ch[i]-'a')];
+		}
+		if(ch[i]>='A'&&ch[i]<='Z'){
+			ch[i]=xiao[(int)(ch[i]-'A')];
+			
+			
+		}
+		printf("%c",ch[i]);
+		i++;
+    }
+	
+    return 0;
+}
+
+```
+
 

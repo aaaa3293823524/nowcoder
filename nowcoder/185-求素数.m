@@ -1,4 +1,4 @@
-# 185. 求素数 
+# 185. |求素数
 
 ## Question description
 
@@ -6,7 +6,48 @@
 输入M、N，1 < M < N < 1000000，求区间[M,N]内的所有素数的个数。素数定义：除了1以外，只能被1和自己整除的自然数称为素数
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+/**
+ * 埃拉托斯特尼筛法 O(n*log(log(n)))
+ * @author wylu
+ */
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] strs = br.readLine().split(" ");
+ 
+        int m = Integer.parseInt(strs[0]), n = Integer.parseInt(strs[1]);
+        System.out.println(simpleSieve(m, n));
+    }
+ 
+    private static int simpleSieve(int m, int n) {
+        //元素值为false表示该元素下标值为素数
+        boolean[] mark = new boolean[n + 1];
+         
+        for (int i = 2; i <= n; i++) {
+            if (!mark[i]) {
+                for (int j = 2 * i; j <= n; j += i) {
+                    mark[j] = true;
+                }
+            }
+        }
+        int count = 0;
+        for (int i = m; i <= n; i++) {
+            if (!mark[i]) count++;
+        }
+        return count;
+    }
+}
+```
+
 

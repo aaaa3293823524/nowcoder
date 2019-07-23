@@ -1,4 +1,4 @@
-# 357. 换座位 
+# 357. |换座位
 
 ## Question description
 
@@ -7,7 +7,50 @@
  现在用一个字母表示一个组，请你计算经历n周之后座位的情况。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+// write your code here
+
+	
+import java.awt.List;
+import java.awt.print.Printable;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+	
+	public class Main {
+		
+	    public static void main(String[] args) {
+	    	 Scanner in = new Scanner(System.in);
+	    	 String string;
+	    	 
+	    	 
+	    	 while(in.hasNext()){
+	    		string=in.next();
+	    	    int n=in.nextInt();
+	    	    n=n%string.length();
+	    	    //System.out.println("n:"+n);
+	    	    if (n>=0) {
+					for (int i = 0; i <n; i++) {
+						string=string.substring(string.length()-1,string.length())+string.substring(0,string.length()-1);
+					}
+				}else{
+					for (int i = 0; i <-n; i++) {
+						string=string.substring(1,string.length())+string.substring(0,1);
+					}
+				}
+	             System.out.println(string);
+	         }
+		    
+		}
+	}
+
+```
+
 

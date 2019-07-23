@@ -1,4 +1,4 @@
-# 370. 鸽兔同校 
+# 370. |鸽兔同校
 
 ## Question description
 
@@ -9,7 +9,29 @@
  现在，他已经知道有这些鸽子和兔子一共有n个头和m只脚。请你帮他写个程序计算一下一共有多少只鸽子和兔子。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            BigDecimal n = sc.nextBigDecimal();
+            BigDecimal m = sc.nextBigDecimal();
+            String x = n.multiply(BigDecimal.valueOf(4)).subtract(m).divide(BigDecimal.valueOf(2)) + "";
+            String y = m.subtract(n.multiply(BigDecimal.valueOf(2))).divide(BigDecimal.valueOf(2)) + "";
+            if(x.charAt(0) == '-' || y.charAt(0) == '-' || x.contains(".") || y.contains(".")) System.out.println("Error");
+            else System.out.println(x + " " + y);
+        }
+    }
+}
+```
+
 

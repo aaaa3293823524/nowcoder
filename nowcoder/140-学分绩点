@@ -1,4 +1,4 @@
-# 140. 学分绩点 
+# 140. |学分绩点
 
 ## Question description
 
@@ -21,7 +21,27 @@
 现要求你编写程序求出某人A的总评绩点（GPA）。
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+a,b,c=input(),list(map(int,input().split())),list(map(int,input().split()))
+total=0
+for i,v in enumerate(c):
+    if 90<=v<=100:total+=b[i]*4
+    elif 85<=v<=89:total+=b[i]*3.7
+    elif 82<=v<=84:total+=b[i]*3.3
+    elif 78<=v<=81:total+=b[i]*3
+    elif 75<=v<=77:total+=b[i]*2.7
+    elif 72<=v<=74:total+=b[i]*2.3
+    elif 68<=v<=71:total+=b[i]*2
+    elif 64<=v<=67:total+=b[i]*1.5
+    elif 60<=v<=63:total+=b[i]*1
+    else:total+=b[i]*0
+print("{0:.2f}".format(total/sum(b)))
+```
+
 

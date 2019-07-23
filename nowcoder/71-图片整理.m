@@ -1,4 +1,4 @@
-# 71. 图片整理 
+# 71. |图片整理
 
 ## Question description
 
@@ -10,7 +10,27 @@ Lily上课时使用字母数字图片教小朋友们学习英语单词，每次�
 
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNext()){
+            String str = sc.nextLine();
+            char[] cs = str.toCharArray();
+            Arrays.sort(cs);
+            System.out.println(cs);
+        }
+        sc.close();
+    }    
+}
+```
+
 

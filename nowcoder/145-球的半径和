@@ -1,4 +1,4 @@
-# 145. 球的半径和体积 
+# 145. |球的半径和体积
 
 ## Question description
 
@@ -6,7 +6,23 @@
 输入球的中心点和球上某一点的坐标，计算球的半径和体积
 
 
-
-
 ## Solution
+
+Language: **['Python']**
+
+```
+
+
+import math
+while True:
+    try:
+        a,b,c,d,e,f=map(int,input().split())
+        r=((d-a)**2+(e-b)**2+(f-c)**2)**(1/2)
+        v=4/3*math.acos(-1)*r**3
+        print("{0:.3f}".format(r)+" "+"{0:.3f}".format(v))
+ 
+    except:
+        break
+```
+
 

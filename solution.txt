@@ -1,18 +1,16 @@
-# {{ question.title_id }}. {{ question.title }} 
+# {{ question.title_id }}. |{{ question.title }}
 
 ## Question description
 
 {{ question.content }}
 
-
-
 ## Solution
-{% for question in questions -%}
+
 Language: **{{ question.lan }}**
 
 ```
 {{ question.code }}
 ```
 
-{% endfor %}
+
 

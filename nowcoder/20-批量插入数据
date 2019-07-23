@@ -1,4 +1,4 @@
-# 20. 批量插入数据，不使用replace操作 
+# 20. |批量插入数据，不使用replace操作
 
 ## Question description
 
@@ -26,7 +26,12 @@ CREATE TABLE  IF NOT EXISTS actor  (
 
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+INSERT OR IGNORE INTO actor VALUES (3, 'ED', 'CHASE', '2006-02-15 12:34:33')
+```
+
 

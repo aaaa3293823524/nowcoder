@@ -1,4 +1,4 @@
-# 385. 锤子剪刀布 (20) 
+# 385. |锤子剪刀布 (20)
 
 ## Question description
 
@@ -6,7 +6,106 @@
 大家应该都会玩“锤子剪刀布”的游戏：现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+		int n;
+		Scanner scanner=new Scanner(System.in);
+		n=scanner.nextInt();
+		String z,x;
+		CJB cjb[]=new CJB[n];
+	    
+	    int count1=0,count2=0,count3=0;//胜    输 平甲方
+	    int a1=0,a2=0,a3=0; //甲方石头剪刀布赢的个数
+	    int b1=0,b2=0,b3=0;
+		for (int i = 0; i < n; i++) {
+			
+			x=scanner.next();
+			z=scanner.next();
+			
+			cjb[i]=new CJB(x,z);
+			if (cjb[i].isS()==0) {
+				count1++;
+				
+				if (x.equals("C")) {
+					a1++;
+				}
+				if (x.equals("J")) {
+					a2++;
+					
+				}
+				if (x.equals("B")) {
+					a3++;
+				}
+			}
+            if (cjb[i].isS()==1) {
+				count2++;
+				
+				if (z.equals("C")) {
+					b1++;
+				}
+				if (z.equals("J")) {
+					b2++;
+					
+				}
+				if (z.equals("B")) {
+					b3++;
+				}
+			}
+           if (cjb[i].isS()==-1) {
+	            count3++;
+              }
+		}
+		System.out.println(count1+" "+count3+" "+count2);
+		System.out.println(count2+" "+count3+" "+count1);
+		if (a3>=a1&&a3>=a2) {
+			System.out.print("B ");
+		}
+		else if (a1>=a3&&a1>=a2) {
+			System.out.print("C ");
+		}
+		else if (a2>=a3&&a2>=a1) {
+			System.out.print("J ");
+		}
+		if (b3>=b1&&b3>=b2) {
+			System.out.println("B");
+		}
+		 else if (b1>=b3&&b1>=b2) {
+			System.out.println("C");
+		}
+		else if (b2>=b3&&b2>=b1) {
+			System.out.println("J");
+		}
+		
+	}
+}
+class CJB{
+	String a,b;
+	CJB(String a,String b){
+		this.a=a;
+		this.b=b;
+	}
+	public int isS(){  //返回0 甲方胜  1乙方胜 -1平
+		String string1="C",string2="J",string3="B";
+		if ((a.equals(string1)&&b.equals(string2))||(a.equals(string2)&&b.equals(string3))||(a.equals(string3)&&b.equals(string1))) {
+			return 0;
+		}
+		if ((a.equals(string2)&&b.equals(string1))||(a.equals(string3)&&b.equals(string2))||(a.equals(string1)&&b.equals(string3))) {
+			return 1;
+		}
+		return -1;
+	}
+}
+
+```
+
 

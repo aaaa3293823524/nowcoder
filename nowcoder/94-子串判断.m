@@ -1,4 +1,4 @@
-# 94. 子串判断 
+# 94. |子串判断
 
 ## Question description
 
@@ -10,7 +10,12 @@
 返回：[true,true,true,false]
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+["a","b","c","d"],4,"abc"
+```
+
 

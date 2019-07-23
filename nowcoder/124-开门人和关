@@ -1,4 +1,4 @@
-# 124. 开门人和关门人 
+# 124. |开门人和关门人
 
 ## Question description
 
@@ -6,7 +6,96 @@
     每天第一个到机房的人要把门打开，最后一个离开的人要把门关好。现有一堆杂乱的机房签到、签离记录，请根据记录找出当天开门和关门的人。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+
+
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main{
+    public  static int name(int n) {
+    	if (n==1) {
+			return 1;
+		}
+		return n*name(n-1);
+	}
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        HashMap<Character, Integer>map=new HashMap<>();
+        while (scanner.hasNext()) {
+        	int n=scanner.nextInt();
+        	People people[]=new People[n];
+        	for (int i = 0; i < n; i++) {
+        		String num=scanner.next();
+        		String start=scanner.next();
+        		String end=scanner.next();
+				people[i]=new People(num, start, end);
+			}
+        	Arrays.sort(people,new MyCmp1());
+        	System.out.print(people[0].num);
+        	Arrays.sort(people,new MyCmp2());
+        	System.out.println(" "+people[0].num);
+        }
+        
+			}
+}
+class People{
+	String num;
+	String start;
+	String end;
+	public People(String num, String start, String end) {
+		super();
+		this.num = num;
+		this.start = start;
+		this.end = end;
+	}
+	
+}
+class MyCmp1 implements Comparator<People>{
+
+	@Override
+	public int compare(People o1, People o2) {
+		// TODO 自动生成的方法存根
+		if(o1.start.compareTo(o2.start)>0) {
+		return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+}
+
+class MyCmp2 implements Comparator<People>{
+
+	@Override
+	public int compare(People o1, People o2) {
+		// TODO 自动生成的方法存根
+		if(o1.end.compareTo(o2.end)<0) {
+		return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+```
+
 

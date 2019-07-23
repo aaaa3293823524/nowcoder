@@ -1,4 +1,4 @@
-# 445. 不要二 
+# 445. |不要二
 
 ## Question description
 
@@ -9,7 +9,26 @@
   小易想知道最多可以放多少块蛋糕在网格盒子里。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt(), n = sc.nextInt();
+        int evenICount = (n / 4) * 2 + (n % 4 < 2 ? n % 4 : 2);
+        int oddICount = ((n - 2) / 4) * 2 + ((n - 2) % 4 < 2 ? (n - 2) % 4 : 2);
+        int ans = m / 4 * (evenICount + oddICount) * 2;
+        if(m % 4 > 0) ans += evenICount;
+        if(m % 4 > 1) ans += evenICount;
+        if(m % 4 > 2) ans += oddICount;
+        System.out.println(ans);
+    }
+}
+```
+
 

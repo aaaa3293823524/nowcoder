@@ -1,4 +1,4 @@
-# 221. 回文字符串 
+# 221. |回文字符串
 
 ## Question description
 
@@ -6,7 +6,37 @@
 给出一个长度不超过1000的字符串，判断它是不是回文(顺读，逆读均相同)的。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNext()){
+            String string=scanner.nextLine();
+            StringBuilder stringBuilder=new StringBuilder(string);
+            String string2=stringBuilder.reverse().toString();
+            boolean flag=true;
+            for (int i = 0; i <= string.length()/2; i++) {
+				if (string.charAt(i)!=string2.charAt(i)) {
+					flag=false;
+					break;
+				}
+			}
+            if (flag) {
+				System.out.println("Yes!");
+			}else{
+				System.out.println("No!");
+			}
+        }
+        
+	}
+}
+```
+
 

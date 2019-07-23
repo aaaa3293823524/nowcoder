@@ -1,4 +1,4 @@
-# 359. 二叉树 
+# 359. |二叉树
 
 ## Question description
 
@@ -18,7 +18,30 @@
  现在的问题就是，给定x和y，要求他们的公共父节点，即xi（也就是 yj）。
 
 
-
-
 ## Solution
+
+Language: **['C']**
+
+```
+
+
+#include<stdio.h>
+ 
+int main()
+{
+    int x,y;
+    while(scanf("%d%d",&x,&y) != EOF){
+        while(x != y){
+            if(x<y){
+                y = y/2;
+            }else{
+                x = x/2;
+            }
+        }
+        printf("%d\n",x);
+    }
+    return 0;   
+} 
+```
+
 

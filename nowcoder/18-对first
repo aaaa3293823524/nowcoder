@@ -1,4 +1,4 @@
-# 18. 对first_name创建唯一索引uniq_idx_firstname 
+# 18. |对first_name创建唯一索引uniq_idx_firstname
 
 ## Question description
 
@@ -12,7 +12,15 @@ CREATE TABLE  IF NOT EXISTS actor  (
 对first_name创建唯一索引uniq_idx_firstname，对last_name创建普通索引idx_lastname
 
 
-
-
 ## Solution
+
+Language: **['Sql']**
+
+```
+
+
+CREATE UNIQUE INDEX uniq_idx_firstname ON actor(first_name);
+CREATE INDEX idx_lastname ON actor(last_name);
+```
+
 

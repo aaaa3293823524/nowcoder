@@ -1,4 +1,4 @@
-# 375. 写出这个数 (20) 
+# 375. |写出这个数 (20)
 
 ## Question description
 
@@ -6,7 +6,37 @@
 读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+	
+	
+	import java.math.BigInteger;
+import java.util.Scanner;
+	
+	public class Main {
+			    public static void main(String[] args) {
+			Scanner scanner=new Scanner(System.in);
+			String str[]={"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
+			
+			String string=scanner.nextLine();
+			int sum=0;
+			for (int i = 0; i < string.length(); i++) {
+				sum+=(string.charAt(i)-'0');
+			}
+			string=String.valueOf(sum);
+			for (int i = 0; i < string.length(); i++) {
+				int j=(string.charAt(i)-'0');
+				if (i==(string.length()-1)) {
+					System.out.println(str[j]);
+				}else
+				System.out.print(str[j]+" ");
+			}
+		}
+	}
+
+```
+
 

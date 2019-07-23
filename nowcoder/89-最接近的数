@@ -1,4 +1,4 @@
-# 89. 最接近的数 
+# 89. |最接近的数
 
 ## Question description
 
@@ -10,7 +10,12 @@
 返回：[1,4]
 
 
-
-
 ## Solution
+
+Language: **['Java']**
+
+```
+2
+```
+
 
