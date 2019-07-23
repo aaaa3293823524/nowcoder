@@ -56,9 +56,9 @@ for i in range(ye_maxNum):
     for j in hrefs:
         list.append(s+j.get('href'))
 
-LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-print(LP_PREFIX)
-print("len:"+len(list))
+# LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+# print(LP_PREFIX)
+# print("len:"+len(list))
 g=0
 for i in list:
     g+=1;
