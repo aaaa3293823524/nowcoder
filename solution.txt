@@ -8,8 +8,8 @@
 
 Language: **{{ question.lan }}**
 
-```
-{{ question.code }}
+```{{ question.lan }}
+{{ question.code| replace("\t", "    ") }}
 ```
 
 

@@ -23,7 +23,7 @@ url='https://www.nowcoder.com/profile/4102679/codeBooks?q=&onlyAcc=0&page=1'
 
 
 html=requests.get(url=url,headers=header)
-print(html.status_code)
+# print(html.status_code)
 # print(html.text)
 html=html.text
 # with open('魔圣提交代码.txt','w',encoding='utf-8')as f:
@@ -32,8 +32,8 @@ html=html.text
 soup=BeautifulSoup(html,'html.parser')
 
 hrefs=soup.find_all('a',class_='test-subject')
-for i in hrefs:
-    print(i.get('href'))
+# for i in hrefs:
+#     print(i.get('href'))
 
 ye=soup.find('li',class_='txt-pager js-last-pager').a
 ye_maxNum=ye.get('data-page')
@@ -48,7 +48,7 @@ s='https://www.nowcoder.com'
 for i in range(ye_maxNum):
     url = 'https://www.nowcoder.com/profile/4102679/codeBooks?q=&onlyAcc=0&page='
     url+=str(i+1)
-    print(url)
+    # print(url)
     html = requests.get(url=url, headers=header)
     html=html.text
     soup = BeautifulSoup(html, 'html.parser')
@@ -75,7 +75,7 @@ questions = []
 LP_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 solu_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'solution.json')
 ques_file = os.path.join(LP_PREFIX,'nowcoder-publisher', 'nowcoder', 'question.json')
-for i in list:
+for i in list[0:3]:
 
     html = requests.get(url=i, headers=header)
     html = html.text
@@ -94,6 +94,7 @@ for i in list:
     print(i+':答案:')
     language=[]
     problem_title = soup.find("span", class_='crumbs-end js-question-title').text
+    problem_title=problem_title[0:9]
     print(problem_title)
     problem_detail = soup.find('div', class_='subject-question').text
     print(problem_detail)
@@ -103,6 +104,7 @@ for i in list:
     # for ques in questions:
     #     if ques['title']==problem_title and ques['lan']==lan:
     #         continue
+    lan=''.join(lan)
     g += 1
     print(g)
     question['title_id'] = g
@@ -111,14 +113,10 @@ for i in list:
     question['lan']=lan
     question['code']=daima
     question['link']=i
-    questions.append(question)
+    questions.append(question.copy())
 
-    ques_file = os.path.join(LP_PREFIX, 'nowcoder-publisher', 'nowcoder', 'question.json')
-    tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'readme.txt'), encoding='utf-8').read())
-    s = tmpl.render(questions=questions)
-    filename = 'README.md'
-    with open(os.path.join(LP_PREFIX, 'nowcoder-publisher', filename), 'a+', encoding='utf-8') as f:
-        f.write(s)
+
+
     # print(re.findall(r'语言：(\S+<)', html)[0].strip('<'))
 
     # solution['title_id'] = i
@@ -129,12 +127,13 @@ for i in list:
     # solution['language'] = language
 
 
-    filename='%s-%s.md' % (g, problem_title)
-    tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'solution.txt'), encoding='utf-8').read())
-    ques = tmpl.render(question=question)
+    # filename='%s-%s.md' % (g, problem_title)
+    # tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'solution.txt'), encoding='utf-8').read())
+    # ques = tmpl.render(question=question)
+    #
+    # with open(os.path.join(LP_PREFIX,'nowcoder-publisher','nowcoder', filename), 'w+', encoding='utf-8') as f:
+    #     f.write(ques)
 
-    with open(os.path.join(LP_PREFIX,'nowcoder-publisher','nowcoder', filename[0:9]), 'w+', encoding='utf-8') as f:
-        f.write(ques)
     # with open(r'%s-%s.md' % (g, problem_title[0:8]), 'a+', encoding='utf-8') as f:
     #     f.write('{0}{0}\n'.format('='*20))
     #     f.write("#" + problem_title + '\n')
@@ -144,6 +143,11 @@ for i in list:
     #     f.write(daima + '\n')
     #     f.write("```" + '\n')
 
+tmpl = Template(open(os.path.join(LP_PREFIX, 'nowcoder-publisher', 'readme.txt'), encoding='utf-8').read())
+ff = tmpl.render(questions=questions)
+filename = 'README.md'
+with open(os.path.join(LP_PREFIX, 'nowcoder-publisher', filename), 'w', encoding='utf-8') as f:
+    f.write(ff)
 
 
 
@@ -155,7 +159,7 @@ cmds.append('git init')
 cmds.append('git add .')
 cmds.append('git commit -m "Auto Deployment"')
 cmds.append('git remote add origin git@github.com:aaaa3293823524/nowcoder.git')
-cmds.append('git push -f -q origin master')
+cmds.append('git push -u origin master')
 
 for cmd in cmds:
     try:
