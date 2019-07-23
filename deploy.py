@@ -10,7 +10,7 @@ cmds.append('git init')
 cmds.append('git add .')
 cmds.append('git commit -m "Auto Deployment"')
 # cmds.append('git remote add origin git@github.com:aaaa3293823524/nowcoder.git')
-cmds.append('git push -f -q aaaa3293823524@nowcoder.git master:master')
+cmds.append('git push -f -q - git@github.com:aaaa3293823524/leetcode.git master:master')
 # cmds.append('git push -u origin master')
 # git push -f -q aaaa3293823524@nowcoder.git master:master
 for cmd in cmds:
