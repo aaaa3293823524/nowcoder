@@ -1,5 +1,5 @@
 
-<p align="center" color="black"><img width="300" src="https://static.nowcoder.com/images/res/logo/logo-v3.png"></p>
+<p align="center" color="black"><img width="300" src="img/nowcoder.png"></p>
 
 <h3 align="center">My accepted nowcoder solutions</h3>
 
