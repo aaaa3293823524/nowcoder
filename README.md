@@ -1,4 +1,6 @@
+<table><tr><td bgcolor=black>
 <p align="center" color="black"><img width="300" src="https://static.nowcoder.com/images/res/logo/logo-v3.png"></p>
+</td></tr></table>
 <h3 align="center">My accepted nowcoder solutions</h3>
 
 |  #  |        标题      |      代码地址     |使用语言|
